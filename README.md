@@ -13,7 +13,7 @@ Please note this site is still under production.
 
 ## **Supported Browsers**
 
-This project is optimized for the following browsers:
+Optimized for the following browsers:
 
 - Chrome
 - Firefox
