@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styles from "./page.module.css";
 
@@ -70,6 +71,16 @@ export default function Home() {
             <button className={styles.secondaryBtn}>View Resume</button>
           </div>
         </div>
+      </div>
+
+      <div className={styles.cat}>
+        <Image
+          src="/media/cat.gif" 
+          alt="Walking Cat"
+          width={50}
+          height={50}
+          unoptimized
+        />
       </div>
 
       <section className={styles.projects}>

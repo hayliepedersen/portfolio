@@ -374,3 +374,9 @@
 .dropdownContent.active {
   display: block;
 }
+
+.cat {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
