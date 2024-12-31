@@ -28,6 +28,15 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+      <style>
+        {`
+          ::selection {
+            color: #010201; 
+            background: #FF5500; 
+          }
+        `}
+      </style>
+
       {/* Mobile Navigation */}
       <div className={styles.mobileNav}>
         <button 
@@ -76,7 +85,7 @@ export default function Home() {
       <div className={styles.cat}>
         <Image
           src="/media/cat.gif" 
-          alt="Walking Cat"
+          alt="Cat"
           width={50}
           height={50}
           unoptimized
@@ -84,7 +93,7 @@ export default function Home() {
       </div>
 
       <section className={styles.projects}>
-        <h2>Projects</h2>
+        <h2>PROJECTS</h2>
         <div className={styles.projectGrid}>
 
           <div className={styles.projectCard}>
