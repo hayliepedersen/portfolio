@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { GithubIcon, ExternalLink } from 'lucide-react';
 import styles from "./page.module.css";
+import { WorkTimeline } from '@/components/work';
+import { EventsGallery } from '@/components/events';
 
 interface Project {
   title: string;
@@ -249,6 +251,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <WorkTimeline />
+      <EventsGallery />
     </div>
   );
 }

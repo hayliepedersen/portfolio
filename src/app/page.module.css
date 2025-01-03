@@ -563,3 +563,364 @@
   mask: url(#flowerMask);
   -webkit-mask: url(#flowerMask);
 }
+
+.workExperience {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #fdf7ec 0%, rgba(139, 69, 19, 0.1) 100%);
+  margin-top: 1rem;
+}
+
+.timelineContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: #FF5500;
+  opacity: 0.2;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.timelineItemLeft {
+  flex-direction: row-reverse;
+}
+
+.timelineItemRight {
+  flex-direction: row;
+}
+
+.timelineNode {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 2rem;
+  background: #2C6E49;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.timelineItem:hover .timelineNode {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.timelineContent {
+  width: 41.666667%;
+  padding: 0 3rem;
+}
+
+.timelineCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.timelineCard:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-color: #FF5500;
+}
+
+.timelineCard h3 {
+  font-family: 'ButlerStencilUltraLight', serif;
+  font-size: 1.25rem;
+  color: #2C6E49;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  color: #666;
+  font-family: 'ButlerLight', sans-serif;
+}
+
+.period {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  color: #4b4b4b;
+}
+
+/* Events Section */
+.eventsSection {
+  padding: 6rem 0;
+  background: #fdf7ec;
+}
+
+.eventsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.sectionTitle {
+  font-family: 'ButlerStencilUltraLight', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #2C6E49;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 2px;
+  background: #FF5500;
+}
+
+.eventsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.eventCard {
+  position: relative;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+  transition: transform 0.5s ease;
+}
+
+.eventCard:hover {
+  transform: scale(1.05);
+}
+
+.eventImageWrapper {
+  position: relative;
+  height: 16rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.eventImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+.eventOverlay {
+  z-index: 2;
+}
+
+.eventTitle {
+  z-index: 3;
+}
+
+.eventCard:hover .eventImage {
+  transform: scale(1.1);
+}
+
+.eventCard:hover .eventOverlay {
+  opacity: 1;
+}
+
+.eventCard:hover .eventTitle {
+  transform: translateY(0);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  height: 80vh;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.modalImage {
+  object-fit: contain;
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carouselSlide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigationButtons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.eventCard:hover .navigationButtons {
+  opacity: 1;
+}
+
+.navButton {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #2C6E49;
+}
+
+.navButton:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.modalNavButton {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.modalNavigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 2;
+}
+
+.imageDots {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background: white;
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .timelineContent {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .timelineLine {
+    left: 2rem;
+  }
+
+  .timelineNode {
+    left: 2rem;
+  }
+
+  .timelineItem {
+    flex-direction: row;
+    padding-left: 4rem;
+  }
+
+  .timelineItemLeft {
+    flex-direction: row;
+  }
+
+  .eventsGrid {
+    grid-template-columns: 1fr;
+  }
+}
