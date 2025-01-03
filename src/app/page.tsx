@@ -8,6 +8,7 @@ interface Project {
   title: string;
   description: string;
   video?: string;
+  poster?: string;
   tags: string[];
   liveLink?: string;
   githubLink?: string;
@@ -41,12 +42,43 @@ export default function Home() {
       title: "soundwrap",
       description: "A dynamic music visualization platform that transforms audio into stunning visual experiences. Built with React and the Web Audio API, it offers real-time audio analysis and interactive visualizations.",
       video: "/media/soundwrap-demo.mov",
-      tags: ["React", "TypeScript", "Web Audio API"],
+      tags: ["React", "TypeScript"],
       liveLink: "https://soundwrap.demo",
       githubLink: "https://github.com/yourusername/soundwrap"
     },
     {
+      title: "petfetch",
+      description: "A dynamic music visualization platform that transforms audio into stunning visual experiences. Built with React and the Web Audio API, it offers real-time audio analysis and interactive visualizations.",
+      video: "/media/petfetch.mp4",
+      poster: "/media/petfetchPoster.png",
+      tags: ["Flask", "Pandas", "Streamlit", "Python", "MySQL", "Docker"],
+      liveLink: "https://soundwrap.demo",
+      githubLink: "https://github.com/yourusername/soundwrap"
+    },
+    {
+      title: "pbcups",
+      description: "A dynamic music visualization platform that transforms audio into stunning visual experiences. Built with React and the Web Audio API, it offers real-time audio analysis and interactive visualizations.",
+      video: "/media/pbcupblog.mov",
+      tags: ["HTML", "CSS"],
+      liveLink: "https://codewhisper.demo",
+      githubLink: "https://github.com/yourusername/codewhisper"
+    },
+    {
       title: "codewhisper",
+      description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
+      tags: ["Next.js", "CSS", "Machine Learning"],
+      liveLink: "https://codewhisper.demo",
+      githubLink: "https://github.com/yourusername/codewhisper"
+    },
+    {
+      title: "ideastruct",
+      description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
+      tags: ["Next.js", "CSS", "Machine Learning"],
+      liveLink: "https://codewhisper.demo",
+      githubLink: "https://github.com/yourusername/codewhisper"
+    },
+    {
+      title: "petfetch",
       description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
       tags: ["Next.js", "CSS", "Machine Learning"],
       liveLink: "https://codewhisper.demo",
@@ -160,79 +192,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ADD PROJECTS FROM BELOW, add vids and thumbnails*/}
-
-      {/*<section className={styles.projects}>
-        <h2>PROJECTS</h2>
-        <div className={styles.projectGrid}>
-
-          <div className={styles.projectCard}>
-            <h3>soundwrap</h3>
-            <p>description goes here...</p>
-            <div className={styles.videoWrapper}>
-              <video controls className={styles.video} width="100%">
-                <source src="/media/soundwrap-demo.mov"/>
-                  Your browser does not support the video tag.
-              </video>
-            </div>
-            <div className={styles.tags}>
-              <span>React</span>
-              <span>TypeScript</span>
-            </div>
-          </div>
-
-          <div className={styles.projectCard}>
-            <h3>codewhisper</h3>
-            <p>description goes here...</p>
-            <div className={styles.tags}>
-              <span>Next.js</span>
-              <span>CSS</span>
-            </div>
-          </div>
-
-          <div className={styles.projectCard}>
-            <h3>petfetch</h3>
-            <p>description goes here...</p>
-            <div className={styles.tags}>
-              <span>React</span>
-              <span>TypeScript</span>
-            </div>
-          </div>
-
-          <div className={styles.projectCard}>
-            <h3>pbcups</h3>
-            <p>description goes here...</p>
-            <div className={styles.videoWrapper}>
-              <video controls className={styles.video} width="100%">
-                <source src="/media/pbcupblog.mov"/>
-                  Your browser does not support the video tag.
-              </video>
-            </div>
-            <div className={styles.tags}>
-              <span>React</span>
-              <span>TypeScript</span>
-            </div>
-          </div>
-
-          <div className={styles.projectCard}>
-            <h3>c4c admin dashboard</h3>
-            <p>description goes here...</p>
-            <div className={styles.videoWrapper}>
-              <video controls className={styles.video} width="100%">
-                <source src="/media/c4c.mov"/>
-                  Your browser does not support the video tag.
-              </video>
-            </div>
-            <div className={styles.tags}>
-              <span>React</span>
-              <span>TypeScript</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-    </div>*/}
-
       <section className={styles.projects}>
         <h2>PROJECTS</h2>
         <div className={styles.projectGrid}>
@@ -247,7 +206,7 @@ export default function Home() {
                     <video 
                       controls 
                       className={styles.video}
-                      poster="/path-to-thumbnail.jpg" // Add thumbnails 
+                      poster={project.poster} 
                     >
                       <source src={project.video} type="video/mp4" />
                       Your browser does not support the video tag.
@@ -270,7 +229,7 @@ export default function Home() {
                       className={`${styles.projectLink} ${styles.liveLink}`}
                     >
                       <ExternalLink size={16} />
-                      Live Demo
+                      Visit Site
                     </a>
                   )}
                   {project.githubLink && (
