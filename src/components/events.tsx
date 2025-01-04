@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import styles from "@/app/page.module.css";
 
 interface EventImage {
@@ -11,6 +11,8 @@ interface EventImage {
 interface Event {
   id: number;
   title: string;
+  description: string;
+  date: string;
   images: EventImage[];
 }
 
@@ -21,23 +23,26 @@ const EventsGallery = () => {
     const events: Event[] = [
       { 
         id: 1, 
-        title: "Tech Conference 2023",
+        title: "First Hackathon!",
+        description: "(Did not) win first place with my team at HackNEU 2024 building an AI-powered accessibility tool.",
+        date: "March 2024",
         images: [
-          { url: "https://picsum.photos/400/320?random=1", alt: "Conference Day 1" },
-          { url: "https://picsum.photos/400/320?random=2", alt: "Conference Day 2" },
-          { url: "https://picsum.photos/400/320?random=3", alt: "Conference Day 3" }
+          { url: "/api/placeholder/400/320", alt: "Team working at hackathon" },
+          { url: "/api/placeholder/400/320", alt: "Project presentation" },
+          { url: "/api/placeholder/400/320", alt: "Award ceremony" }
         ]
       },
       { 
         id: 2, 
-        title: "Hackathon Winner",
+        title: "NER Racing Team",
+        description: "Joined Northeastern Electric Racing as a software developer. Working on the team website and learning about electric vehicles!",
+        date: "January 2024",
         images: [
-          { url: "https://picsum.photos/400/320?random=4", alt: "Team Working" },
-          { url: "https://picsum.photos/400/320?random=5", alt: "Final Presentation" },
-          { url: "https://picsum.photos/400/320?random=6", alt: "Award Ceremony" }
+          { url: "/api/placeholder/400/320", alt: "Team meeting" },
+          { url: "/api/placeholder/400/320", alt: "Working on the car" },
+          { url: "/api/placeholder/400/320", alt: "Team photo" }
         ]
-      },
-      // Add more events as needed
+      }
     ];
   
     const handleNext = (eventId: number, e: React.MouseEvent) => {
@@ -66,6 +71,7 @@ const EventsGallery = () => {
       <section className={styles.eventsSection}>
         <div className={styles.eventsContainer}>
           <h2 className={styles.sectionTitle}>RECENT EVENTS</h2>
+          <p className={styles.eventsSubtitle}>...in my life ♡</p>
   
           <div className={styles.eventsGrid}>
             {events.map((event) => {
@@ -73,10 +79,13 @@ const EventsGallery = () => {
               return (
                 <div 
                   key={event.id}
-                  className={styles.eventCard}
-                  onClick={() => setSelectedImage(event)}
+                  className={`${styles.eventCard} bg-white/80 backdrop-blur-md`}
                 >
-                  <div className={styles.eventImageWrapper}>
+                  <div 
+                    className={styles.eventImageWrapper}
+                    onClick={() => setSelectedImage(event)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <div className={styles.carouselContainer}>
                       {event.images.map((image, index) => (
                         <div
@@ -120,18 +129,20 @@ const EventsGallery = () => {
                         />
                       ))}
                     </div>
-  
-                    <div className={styles.eventOverlay} />
-                    <div className={styles.eventTitle}>
-                      <h3>{event.title}</h3>
-                    </div>
+                  </div>
+
+                  <div className={styles.eventText}>
+                    <h3 className={styles.heading}>{event.title}</h3>
+                    <p className={styles.date}>{event.date}</p>
+                    <p className={styles.description}>{event.description}</p>
                   </div>
                 </div>
               );
             })}
           </div>
         </div>
-  
+
+        {/* Modal for full-size image view */}
         {selectedImage && (
           <div 
             className={styles.modal}
@@ -166,13 +177,13 @@ const EventsGallery = () => {
                   setSelectedImage(null);
                 }}
               >
-                ×
+                <X size={24} />
               </button>
             </div>
           </div>
         )}
       </section>
     );
-  };
+};
 
 export { EventsGallery };

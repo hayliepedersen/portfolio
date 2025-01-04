@@ -5,6 +5,7 @@ import { GithubIcon, ExternalLink } from 'lucide-react';
 import styles from "./page.module.css";
 import { WorkTimeline } from '@/components/work';
 import { EventsGallery } from '@/components/events';
+// import ParticleEffect from '@/components/particle';
 
 interface Project {
   title: string;
@@ -91,6 +92,7 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+      {/* <ParticleEffect /> */}
       <style>
         {`
           ::selection {
