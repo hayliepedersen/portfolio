@@ -11,6 +11,7 @@ interface Project {
   title: string;
   description: string;
   video?: string;
+  image?: string;
   poster?: string;
   tags: string[];
   liveLink?: string;
@@ -40,6 +41,28 @@ export default function Home() {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const workSection = document.querySelector(`.${styles.workExperience}`);
+      if (!workSection) return;
+  
+      const rect = workSection.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+  
+      if (isVisible) {
+        workSection.classList.add(styles.visible);
+      } else {
+        workSection.classList.remove(styles.visible);
+      }
+    };
+  
+    handleScroll();
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const projects: Project[] = [
     {
       title: "soundwrap",
@@ -59,6 +82,14 @@ export default function Home() {
       githubLink: "https://github.com/yourusername/soundwrap"
     },
     {
+      title: "c4c admin dashboard",
+      description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
+      video: "/media/c4c.mov",
+      tags: ["Next.js", "CSS", "Machine Learning"],
+      liveLink: "https://codewhisper.demo",
+      githubLink: "https://github.com/yourusername/codewhisper"
+    },
+    {
       title: "pbcups",
       description: "A dynamic music visualization platform that transforms audio into stunning visual experiences. Built with React and the Web Audio API, it offers real-time audio analysis and interactive visualizations.",
       video: "/media/pbcupblog.mov",
@@ -69,6 +100,7 @@ export default function Home() {
     {
       title: "codewhisper",
       description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
+      image: "/media/codewhisper.png",
       tags: ["Next.js", "CSS", "Machine Learning"],
       liveLink: "https://codewhisper.demo",
       githubLink: "https://github.com/yourusername/codewhisper"
@@ -80,14 +112,6 @@ export default function Home() {
       liveLink: "https://codewhisper.demo",
       githubLink: "https://github.com/yourusername/codewhisper"
     },
-    {
-      title: "petfetch",
-      description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
-      tags: ["Next.js", "CSS", "Machine Learning"],
-      liveLink: "https://codewhisper.demo",
-      githubLink: "https://github.com/yourusername/codewhisper"
-    },
-    // ... add data for other projects
   ];
 
   return (
@@ -215,6 +239,17 @@ export default function Home() {
                       <source src={project.video} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
+                  </div>
+                )}
+
+                {project.image && (
+                  <div className={styles.videoWrapper}>
+                    <Image 
+                      src={project.image} 
+                      alt="Project Image"
+                      fill
+                      className={styles.video}
+                     />
                   </div>
                 )}
                 

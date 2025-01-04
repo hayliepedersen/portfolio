@@ -23,13 +23,14 @@ const EventsGallery = () => {
     const events: Event[] = [
       { 
         id: 1, 
-        title: "First Hackathon!",
+        title: "First Hackathon @ HackMIT!",
         description: "(Did not) win first place with my team at HackNEU 2024 building an AI-powered accessibility tool.",
-        date: "March 2024",
+        date: "September 2024",
         images: [
-          { url: "/api/placeholder/400/320", alt: "Team working at hackathon" },
-          { url: "/api/placeholder/400/320", alt: "Project presentation" },
-          { url: "/api/placeholder/400/320", alt: "Award ceremony" }
+          { url: "/media/events/hackMIT2.png", alt: "The team :)" },
+          { url: "/media/events/hackMITDogs.jpeg", alt: "Doggos" },
+          { url: "/media/events/hackMIT.png", alt: "Pizza!" },
+          { url: "/media/events/hackMIT3.jpeg", alt: "Us at the final ceremony !!" }
         ]
       },
       { 
