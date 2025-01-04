@@ -5,6 +5,7 @@ import { GithubIcon, ExternalLink } from 'lucide-react';
 import styles from "./page.module.css";
 import { WorkTimeline } from '@/components/work';
 import { EventsGallery } from '@/components/events';
+import ThemeToggle from '@/components/themetoggle';
 // import ParticleEffect from '@/components/particle';
 
 interface Project {
@@ -291,6 +292,24 @@ export default function Home() {
 
       <WorkTimeline />
       <EventsGallery />
+      <footer className={styles.footer}>
+      <h2 className={styles.title}>Lets Connect!</h2>
+      <div className={styles.contactInfo}>
+        <a href="mailto:youremail@example.com" className={styles.contactItem}>
+          <i className={`${styles.icon} fas fa-envelope`}></i>pedersen.h@northeastern.edu
+        </a>
+        <a href="tel:+1234567890" className={styles.contactItem}>
+          <i className={`${styles.icon} fas fa-phone`}></i>+1 (315) 571-6223
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+          <i className={`${styles.icon} fab fa-linkedin`}></i>LinkedIn
+        </a>
+        <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+          <i className={`${styles.icon} fab fa-github`}></i>GitHub
+        </a>
+      </div>
+      </footer>
+      <ThemeToggle />
     </div>
   );
 }

@@ -1,13 +1,21 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdf7ec;
+  --text-primary: #4b4b4b;
+  --text-secondary: #666;
+  --accent-primary: #FF5500;
+  --accent-secondary: #2C6E49;
+  --card-bg: rgba(213, 187, 169, 0.1);
+  --border-color: rgba(255, 255, 255, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root[class~="dark"] {
+  --background: #0f1117;
+  --text-primary: #e0e0ff;
+  --text-secondary: #a8b3cf;
+  --accent-primary: #ff36f7;
+  --accent-secondary: #4f8aff;
+  --card-bg: rgba(67, 39, 117, 0.15);
+  --border-color: rgba(255, 255, 255, 0.1);
 }
 
 html,

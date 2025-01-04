@@ -23,7 +23,8 @@
 .page {
   font-family: 'ButlerUltraLight', serif;
   min-height: 100vh;
-  background-color: #fdf7ec;
+  background-color: var(--background);
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -36,7 +37,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  background: #fdf7ec;
+  background: var(--background);
   position: relative;
   z-index: 10;
 }
@@ -67,7 +68,7 @@
 
 .headerSection h1 {
   font-size: clamp(2.5rem, 6vw, 4rem);
-  color: #2C6E49;
+  color: var(--accent-secondary);
   margin: 0;
   padding: 0;
 }
@@ -100,7 +101,7 @@
   max-width: 600px;
   margin: 1.5rem auto;
   line-height: 1.8;
-  color: #666;
+  color: var(--text-secondary);
   font-size: 1.1rem;
 }
 
@@ -123,8 +124,8 @@
 }
 
 .primaryBtn {
-  background: #FF5500;
-  color: #fdf7ec;
+  background: var(--accent-primary);
+  color: var(--background);
   border: none;
 }
 
@@ -135,8 +136,8 @@
 
 .secondaryBtn {
   background: transparent;
-  color: #FF5500;
-  border: 1px solid #FF5500;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
 }
 
 .secondaryBtn:hover {
@@ -153,7 +154,7 @@
 .projects h2 {
   font-family: 'ButlerStencilUltraLight', serif;
   font-size: clamp(2rem, 5vw, 3rem);
-  color: #2C6E49;
+  color: var(--accent-secondary);
   text-align: center;
   margin-bottom: 4rem;
   position: relative;
@@ -168,7 +169,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: #FF5500;
+  background: var(--accent-primary);
   border-radius: 2px;
 }
 
@@ -184,13 +185,13 @@
 }
 
 .projectCard {
-  background: rgba(213, 187, 169, 0.1);
+  background: var(--card-bg);
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-color);
   height: auto;
   min-height: 425px;
   color: black;
@@ -199,7 +200,7 @@
 .projectCard:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border-color: #FF5500;
+  border-color: var(--accent-primary);
 }
 
 .projectContent {
@@ -209,7 +210,7 @@
 .projectCard h3 {
   font-family: 'ButlerStencilUltraLight', serif;
   font-size: 1.75rem;
-  color: #2C6E49;
+  color: var(--accent-secondary);
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
@@ -222,7 +223,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #FF5500;
+  background: var(--accent-primary);
   transition: width 0.3s ease;
 }
 
@@ -231,7 +232,7 @@
 }
 
 .projectCard p {
-  color: #2c2c2c;
+  color: var(--text-primary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
@@ -264,8 +265,8 @@
 }
 
 .tags span {
-  background: #2C6E49;
-  color: #fdf7ec;
+  background: var(--accent-secondary);
+  color: var(--background);
   padding: 0.25rem 1rem;
   border-radius: 99px;
   font-size: 1rem;
@@ -275,8 +276,8 @@
 
 .tags span:hover {
   background: transparent;
-  color: #2C6E49;
-  border-color: #2C6E49;
+  color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
 }
 
 .projectLinks {
@@ -298,7 +299,7 @@
 }
 
 .liveLink {
-  background: #FF5500;
+  background: var(--accent-primary);
   color: #fdf7ec;
 }
 
@@ -528,7 +529,7 @@
   font-family: 'ButlerStencilUltraLight', serif;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   margin-bottom: 1.5rem;
-  color: #2C6E49;
+  color: var(--accent-secondary);
 }
 
 .aboutText p {
@@ -616,7 +617,7 @@
   transform: translateX(-50%);
   font-family: 'ButlerLight', serif;
   font-size: 1rem;
-  color: #FF5500;
+  color: var(--accent-primary);
   opacity: 0.7;
   letter-spacing: 5px;
 }
@@ -669,7 +670,7 @@
   transform: translateX(-50%);
   width: 2rem;
   height: 2rem;
-  background: #2C6E49;
+  background: var(--accent-secondary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -719,7 +720,7 @@
 .timelineCard:hover {
   transform: translateY(-0.5rem);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  border-color: #FF5500;
+  border-color: var(--accent-primary);
 }
 
 .timelineCard:hover::before {
@@ -729,7 +730,7 @@
 .timelineCard h3 {
   font-family: 'ButlerStencilUltraLight', serif;
   font-size: 1.25rem;
-  color: #2C6E49;
+  color: var(--accent-secondary);
   margin-bottom: 0.5rem;
 }
 
@@ -751,7 +752,7 @@
 .sectionTitle {
   font-family: 'ButlerStencilUltraLight', serif;
   font-size: clamp(2rem, 5vw, 3rem);
-  color: #2C6E49;
+  color: var(--accent-secondary);
   text-align: center;
   margin-bottom: 1rem;
   position: relative;
@@ -783,13 +784,13 @@
 .eventCard:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: #FF5500;
+  border-color: var(--accent-primary);
 }
 
 .eventsSubtitle {
   font-size: 1.1rem;
   font-style: italic;
-  color: #FF5500;
+  color: var(--accent-primary);
   text-align: center;
   margin-bottom: 3rem;
   font-family: 'ButlerLight', sans-serif;
@@ -807,7 +808,7 @@
 .heading {
   font-size: 1.25rem; 
   font-weight: 600; 
-  color: #2C6E49;
+  color: var(--accent-secondary);
   margin-bottom: -10px; 
 }
 
@@ -826,6 +827,8 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .eventsGrid {
@@ -970,7 +973,7 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #2C6E49;
+  color: var(--accent-secondary);
 }
 
 .navButton:hover {
@@ -1060,7 +1063,6 @@
   }
 }
 
-/* Add subtle particle effect */
 .particleContainer {
   position: fixed;
   top: 0;
@@ -1091,4 +1093,101 @@
     transform: translateY(-100vh) translateX(100px);
     opacity: 0;
   }
+}
+
+.themeToggle {
+  position: fixed; /* Sticks to the viewport */
+  top: 1rem; /* Distance from the top */
+  right: 1rem; /* Distance from the right */
+  padding: 0.5rem; /* Spacing inside the button */
+  border-radius: 50%; /* Rounded button */
+  background-color: rgba(255, 255, 255, 0.8); /* Light background with slight opacity */
+  backdrop-filter: blur(10px); /* Subtle blur effect for the background */
+  transition: all 0.3s ease-in-out; /* Smooth hover and active transitions */
+  z-index: 50; /* Ensures it stays on top of other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.tthemeToggle:hover {
+  transform: scale(1.1);
+}
+
+.themeToggle:active {
+  transform: scale(0.95); 
+}
+
+.themeToggle.dark {
+  background-color: #1E293B; 
+}
+
+.icon {
+  width: 1.5rem; 
+  height: 1.5rem;
+}
+
+.sunIcon {
+  color: #FACC15; 
+}
+
+.moonIcon {
+  color: #374151; 
+}
+
+.page, .projectCard, .headerSection h1, .bio, 
+.primaryBtn, .secondaryBtn, .tags span {
+  transition: all 0.3s ease-in-out;
+}
+
+:root[class~="dark"] .projectCard:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 40px rgba(255, 54, 247, 0.1);
+}
+
+:root[class~="dark"] .tags span:hover {
+  background: transparent;
+  color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+}
+
+.footer {
+  background-color: var(--accent-secondary);
+  color: #fdf7ec; 
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fdf7ec;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-left: -2rem;
+}
+
+.contactItem {
+  color: #fdf7ec;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.contactItem:hover {
+  color: #1abc9c; /* Hover effect */
+}
+
+.icon {
+  font-size: 1.2rem;
 }
