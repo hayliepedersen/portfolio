@@ -1074,6 +1074,10 @@
   .eventsGrid {
     grid-template-columns: 1fr;
   }
+
+  .workExperience h2.sectionTitle::before {
+    width: 36rem;
+  }
 }
 
 @keyframes gradientBG {
@@ -1122,8 +1126,8 @@
 
 .themeToggle {
   position: absolute; 
-  top: 1rem; 
-  right: 1rem; 
+  top: 1.1rem; 
+  right: 1.5rem; 
   transition: all 0.3s ease-in-out; 
   z-index: 50;  
   width: 64px;
@@ -1160,11 +1164,14 @@
 .toggleThumbLight {
   transform: translateX(0);
   background-color: var(--accent-primary);
+  bottom: .13rem;
 }
 
 .toggleThumbDark {
   transform: translateX(32px);
   background-color: var(--accent-secondary);
+  bottom: .13rem;
+  right: .23rem;
 }
 
 .themeIcon {
