@@ -202,7 +202,7 @@
 }
 
 .projectCard {
-  background: var(--card-bg);
+  background: var(--timeline-card);
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -735,7 +735,7 @@
   background: linear-gradient(
     45deg,
     transparent,
-    rgba(255, 85, 0, 0.05),
+    var(--accent-primary-light),
     transparent
   );
   transform: translateX(-100%);
@@ -771,7 +771,7 @@
 }
 
 .description {
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
 }
 
 .sectionTitle {

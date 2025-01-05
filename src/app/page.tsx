@@ -209,7 +209,7 @@ export default function Home() {
         >
           <div className={styles.modalContent}>
             <Image
-              src="/media/ideastruct.png" 
+              src="/media/resume.png" 
               alt="Resume"
               className={styles.modalImage}
               fill

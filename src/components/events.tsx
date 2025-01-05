@@ -39,9 +39,9 @@ const EventsGallery = () => {
         description: "Joined Northeastern Electric Racing as a software developer. Working on the team website and learning about electric vehicles!",
         date: "January 2024",
         images: [
-          { url: "/api/placeholder/400/320", alt: "Team meeting" },
-          { url: "/api/placeholder/400/320", alt: "Working on the car" },
-          { url: "/api/placeholder/400/320", alt: "Team photo" }
+          { url: "/media/events/car.jpeg", alt: "NER Car" },
+          { url: "/media/events/finishline.png", alt: "Finishline Website" },
+          { url: "/media/events/meeting.jpeg", alt: "Team meeting" },
         ]
       }
     ];

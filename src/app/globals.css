@@ -13,6 +13,7 @@
   --gradient-text: var(--accent-secondary);
   --gradient-footer: #2c6e49e6;
   --footer-accent: #FF5500;
+  --accent-primary-light: rgba(255, 85, 0, 0.05);
 }
 
 :root[class~="dark"] {
@@ -30,6 +31,7 @@
   --gradient-text: linear-gradient(45deg, #ff36f7, #4f8aff, #6b3eff);
   --gradient-footer: linear-gradient(135deg, #6b3eff 0%, #ff36f7 50%, #4f8aff 100%);
   --footer-accent: #4f8aff;
+  --accent-primary-light: #ff36f80c;
 }
 
 html,
