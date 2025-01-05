@@ -341,10 +341,10 @@ export default function Home() {
       <footer id="contact" className={styles.footer}>
       <h2 className={styles.title}>Lets Connect!</h2>
       <div className={styles.contactInfo}>
-        <a href="mailto:youremail@example.com" className={styles.contactItem}>
+        <a href="mailto:pedersen.h@northeastern.edu" className={styles.contactItem}>
           <i className={`${styles.icon} fas fa-envelope`}></i>pedersen.h@northeastern.edu
         </a>
-        <a href="tel:+1234567890" className={styles.contactItem}>
+        <a href="tel:+13155716223" className={styles.contactItem}>
           <i className={`${styles.icon} fas fa-phone`}></i>+1 (315) 571-6223
         </a>
         <a href="https://www.linkedin.com/in/haylie-pedersen/" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>

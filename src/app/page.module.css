@@ -1124,7 +1124,7 @@
   position: fixed; /* Sticks to the viewport */
   top: 1rem; /* Distance from the top */
   right: 1rem; /* Distance from the right */
-  padding: 0.5rem; /* Spacing inside the button */
+  padding: 0.3rem; /* Spacing inside the button */
   border-radius: 50%; /* Rounded button */
   background-color: rgba(255, 255, 255, 0.8); /* Light background with slight opacity */
   backdrop-filter: blur(10px); /* Subtle blur effect for the background */
