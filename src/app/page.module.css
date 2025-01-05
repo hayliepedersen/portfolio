@@ -1121,41 +1121,95 @@
 }
 
 .themeToggle {
-  position: fixed; /* Sticks to the viewport */
-  top: 1rem; /* Distance from the top */
-  right: 1rem; /* Distance from the right */
-  padding: 0.3rem; /* Spacing inside the button */
-  border-radius: 50%; /* Rounded button */
-  background-color: rgba(255, 255, 255, 0.8); /* Light background with slight opacity */
-  backdrop-filter: blur(10px); /* Subtle blur effect for the background */
-  transition: all 0.3s ease-in-out; /* Smooth hover and active transitions */
-  z-index: 50; /* Ensures it stays on top of other elements */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  position: absolute; 
+  top: 1rem; 
+  right: 1rem; 
+  transition: all 0.3s ease-in-out; 
+  z-index: 50;  
+  width: 64px;
+  height: 32px;
+  padding: 4px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 2px solid;
+  align-items: center;
+  background: none;
 }
 
-.tthemeToggle:hover {
-  transform: scale(1.1);
+.themeToggleLight {
+  background-color: #fff3e0;
+  border-color: var(--accent-primary);
 }
 
-.themeToggle:active {
-  transform: scale(0.95); 
+.themeToggleDark {
+  background-color: #1a1b1e;
+  border-color: var(--accent-secondary);
 }
 
-.themeToggle.dark {
-  background-color: #1E293B; 
+.toggleThumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.icon {
-  width: 1.5rem; 
-  height: 1.5rem;
+.toggleThumbLight {
+  transform: translateX(0);
+  background-color: var(--accent-primary);
+}
+
+.toggleThumbDark {
+  transform: translateX(32px);
+  background-color: var(--accent-secondary);
+}
+
+.themeIcon {
+  position: absolute;
+  transition: opacity 0.3s ease-in-out;
+  color: currentColor;
 }
 
 .sunIcon {
-  color: #FACC15; 
+  opacity: 0;
+  color: #fff3e0;
 }
 
 .moonIcon {
-  color: #374151; 
+  opacity: 0;
+  color: #1a1b1e;
+}
+
+.bgSunIcon {
+  opacity: 0;
+  color: var(--accent-primary);
+  left: 8px; 
+}
+
+.bgMoonIcon {
+  opacity: 0;
+  color: var(--accent-secondary);
+  right: 8px; 
+}
+
+.themeToggleLight .bgSunIcon,
+.themeToggleDark .bgMoonIcon,
+.themeToggleLight .toggleThumb .sunIcon,
+.themeToggleDark .toggleThumb .moonIcon {
+  opacity: 1;
+}
+
+.backgroundIcons {
+  position: absolute;
+  inset: 0; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0 8px;
+  pointer-events: none;
 }
 
 .page, .projectCard, .headerSection h1, .bio, 

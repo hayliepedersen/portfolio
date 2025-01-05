@@ -35,8 +35,8 @@ const EventsGallery = () => {
       },
       { 
         id: 2, 
-        title: "NER Racing Team",
-        description: "Joined Northeastern Electric Racing as a software developer. Working on the team website and learning about electric vehicles!",
+        title: "Joined NER",
+        description: "Joined Northeastern Electric Racing as a software developer. Now working on the team website and learning about electric vehicles!",
         date: "January 2024",
         images: [
           { url: "/media/events/car.jpeg", alt: "NER Car" },

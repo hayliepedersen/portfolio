@@ -139,29 +139,31 @@ export default function Home() {
 
       {/* Mobile Navigation */}
       <div className={styles.mobileNav}>
-        <button 
-          className={styles.hamburger}
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsMenuOpen(!isMenuOpen);
-          }}
-          aria-label="Toggle menu"
-        >
-          ☰
-        </button>
-        <div className={`${styles.dropdownContent} ${isMenuOpen ? styles.active : ''}`}>
-          <a onClick={() => scrollToSection('about')}>About</a>
-          <a onClick={() => scrollToSection('projects')}>Projects</a>
-          <a onClick={() => scrollToSection('contact')}>Contact</a>
-        </div>
+      <button 
+        className={styles.hamburger}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsMenuOpen(!isMenuOpen);
+        }}
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
+      <div className={`${styles.dropdownContent} ${isMenuOpen ? styles.active : ''}`}>
+        <a onClick={() => scrollToSection('about')}>About</a>
+        <a onClick={() => scrollToSection('work')}>Work</a>
+        <a onClick={() => scrollToSection('projects')}>Projects</a>
+        <a onClick={() => scrollToSection('events')}>Events</a>
+      </div>
       </div>
 
       {/* Desktop Navigation */}
       <nav className={`${styles.navbar} ${styles.slidingBorder}`}>
         <div className={styles.navLinks}>
           <a onClick={() => scrollToSection('about')}>About</a>
+          <a onClick={() => scrollToSection('work')}>Work</a>
           <a onClick={() => scrollToSection('projects')}>Projects</a>
-          <a onClick={() => scrollToSection('contact')}>Contact</a>
+          <a onClick={() => scrollToSection('events')}>Events</a>
         </div>
       </nav>
 
@@ -336,9 +338,13 @@ export default function Home() {
         </div>
       </section>
 
-      <WorkTimeline />
-      <EventsGallery />
-      <footer id="contact" className={styles.footer}>
+      <div id='work'>
+        <WorkTimeline />
+      </div>
+      <div id='events'>
+        <EventsGallery />
+      </div>
+      <footer className={styles.footer}>
       <h2 className={styles.title}>Lets Connect!</h2>
       <div className={styles.contactInfo}>
         <a href="mailto:pedersen.h@northeastern.edu" className={styles.contactItem}>
