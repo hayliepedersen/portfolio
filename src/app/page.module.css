@@ -49,17 +49,17 @@
 
 .navLinks a {
   text-decoration: none;
-  color: #666;
+  color: var(--text-secondary);
   transition: color 0.3s;
 }
 
 .navLinks a:hover {
-  color: rgba(139, 69, 19, 0.6);
+  color: var(--nav-links);
 }
 
 .headerSection {
   font-family: 'ButlerStencilUltraLight', serif;
-  font-weight: 200 !important; 
+  font-weight: 200; 
   font-stretch: condensed; 
   transform: scaleX(0.9) scaleY(1.2);
   text-align: center;
@@ -68,9 +68,26 @@
 
 .headerSection h1 {
   font-size: clamp(2.5rem, 6vw, 4rem);
-  color: var(--accent-secondary);
   margin: 0;
   padding: 0;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientFlow 2s linear infinite;
+  background-size: 200% auto;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .mainContent {
@@ -91,7 +108,7 @@
 }
 
 .title {
-  color: #4b4b4b;
+  color: var(--text-secondary);
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   margin: 1rem 0;
   font-weight: 500;
@@ -130,8 +147,8 @@
 }
 
 .primaryBtn:hover {
-  background: rgba(139, 69, 19, 0.1);
-  color: #666;
+  background: var(--border-accent);
+  color: var(--text-secondary);
 }
 
 .secondaryBtn {
@@ -141,9 +158,9 @@
 }
 
 .secondaryBtn:hover {
-  color: #666;
-  background: rgba(139, 69, 19, 0.1);
-  border-color: rgba(139, 69, 19, 0.1);
+  color: var(--text-secondary);
+  background: var(--border-accent);
+  border-color: var(--border-accent);
 }
 
 .projects {
@@ -168,7 +185,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
-  height: 3px;
+  height: 1.5px;
   background: var(--accent-primary);
   border-radius: 2px;
 }
@@ -194,7 +211,6 @@
   border: 1px solid var(--border-color);
   height: auto;
   min-height: 425px;
-  color: black;
 }
 
 .projectCard:hover {
@@ -305,8 +321,8 @@
 
 .githubLink {
   background: transparent;
-  color: #666;
-  border: 1px solid #666;
+  color: var(--text-secondary);
+  border: 1px solid var(--text-secondary);
 }
 
 .projectLink:hover {
@@ -407,6 +423,24 @@
   .cat {
     margin-bottom: 50px;
   }
+
+  .footer {
+    padding: 3rem 1rem;
+  }
+
+  .footer h2 {
+    font-size: 2rem;
+  }
+
+  .contactInfo {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .contactItem {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
 }
 
 .slidingBorder {
@@ -418,7 +452,7 @@
 .slidingBorder::after {
   content: '';
   position: absolute;
-  background: rgba(139, 69, 19, 0.1);
+  background: var(--border-accent);
   transition: transform 2s ease-out;
 }
 
@@ -448,7 +482,7 @@
 .mobileNav {
   display: none;  /* Hidden by default */
   width: 100%;
-  background: rgba(139, 69, 19, 0.1);;
+  background: var(--border-accent);;
   padding: 0.5rem;
   position: fixed;
   top: 0;
@@ -462,7 +496,7 @@
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-  color: #666;
+  color: var(--text-secondary);
   padding: 0.5rem;
   margin: 0 auto;
   display: block;
@@ -474,14 +508,14 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: rgba(139, 69, 19, 0.1);;
+  background: var(--border-accent);;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dropdownContent a {
   display: block;
   padding: 1rem;
-  color: #666;
+  color: var(--text-secondary);
   text-decoration: none;
   text-align: center;
   font-family: 'ButlerUltraLight', serif;
@@ -521,7 +555,7 @@
 
 .aboutText {
   flex: 1;
-  color: #666;
+  color: var(--text-secondary);
   max-height: fit-content;
 }
 
@@ -568,15 +602,6 @@
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
-  /* background: linear-gradient(
-    90deg,
-    #fdf7ec 25%,
-    rgba(44, 110, 73, 0.03) 25%,
-    rgba(44, 110, 73, 0.03) 50%,
-    #fdf7ec 50%,
-    #fdf7ec 75%,
-    rgba(44, 110, 73, 0.03) 75%
-  ); */
   background-size: 200% 200%;
   animation: gradientSlide 35s linear infinite;
   margin-bottom: 2rem;
@@ -592,7 +617,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 85, 0, 0.2),
+    var(--work-accent),
     transparent
   );
   animation: slidingLine 15s infinite;
@@ -642,8 +667,8 @@
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(255, 85, 0, 0.3) 10%,
-    rgba(255, 85, 0, 0.3) 90%,
+    var(--work-accent) 10%,
+    var(--work-accent) 90%,
     transparent
   );
   opacity: 0.8;
@@ -689,7 +714,7 @@
 }
 
 .timelineCard {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--timeline-card);
   backdrop-filter: blur(8px);
   padding: 1.5rem;
   border-radius: 0.5rem;
@@ -735,18 +760,18 @@
 }
 
 .company {
-  color: #666;
+  color: var(--text-secondary);
   font-family: 'ButlerLight', sans-serif;
 }
 
 .period {
   font-size: 0.875rem;
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 0.75rem;
 }
 
 .description {
-  color: #4b4b4b;
+  color: var(--text-primary);
 }
 
 .sectionTitle {
@@ -828,7 +853,7 @@
   margin: 0 auto;
   padding: 0 1rem;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .eventsGrid {
@@ -1150,44 +1175,108 @@
 }
 
 .footer {
-  background-color: var(--accent-secondary);
-  color: #fdf7ec; 
+  background: var(--gradient-footer);
+  color: #fdf7ec;
   text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 4rem 2rem;
+  margin-top: 8rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+  background-size: 200% 200%;
+  animation: gradientFlow 15s linear infinite;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(253, 247, 236, 0.3),
+    transparent
+  );
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--footer-accent),
+    transparent
+  );
+  opacity: 0.3;
 }
 
 .footer h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-family: 'ButlerStencilUltraLight', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
   color: #fdf7ec;
+  position: relative;
+  display: inline-block;
+}
+
+.footer h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--accent-primary);
+  opacity: 0.6;
 }
 
 .contactInfo {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
   align-items: center;
-  margin-left: -2rem;
+  position: relative;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .contactItem {
   color: #fdf7ec;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   display: flex;
-  gap: 0.5rem;
-  transition: color 0.3s ease;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  justify-content: center;
 }
 
 .contactItem:hover {
-  color: #1abc9c; /* Hover effect */
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .icon {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  opacity: 0.9;
 }

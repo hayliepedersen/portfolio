@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { GithubIcon, ExternalLink } from 'lucide-react';
+import { GithubIcon, ExternalLink, X } from 'lucide-react';
 import styles from "./page.module.css";
 import { WorkTimeline } from '@/components/work';
 import { EventsGallery } from '@/components/events';
@@ -21,6 +21,7 @@ interface Project {
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showResumeModal, setShowResumeModal] = useState(false);
   
   useEffect(() => {
     // Add sliding border animation on mount
@@ -63,6 +64,14 @@ export default function Home() {
   
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false); 
+    }
+  };
 
   const projects: Project[] = [
     {
@@ -109,6 +118,7 @@ export default function Home() {
     {
       title: "ideastruct",
       description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
+      image: "/media/ideastruct.png",
       tags: ["Next.js", "CSS", "Machine Learning"],
       liveLink: "https://codewhisper.demo",
       githubLink: "https://github.com/yourusername/codewhisper"
@@ -140,18 +150,18 @@ export default function Home() {
           ☰
         </button>
         <div className={`${styles.dropdownContent} ${isMenuOpen ? styles.active : ''}`}>
-          <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
-          <a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a>
-          <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+          <a onClick={() => scrollToSection('about')}>About</a>
+          <a onClick={() => scrollToSection('projects')}>Projects</a>
+          <a onClick={() => scrollToSection('contact')}>Contact</a>
         </div>
       </div>
 
       {/* Desktop Navigation */}
       <nav className={`${styles.navbar} ${styles.slidingBorder}`}>
         <div className={styles.navLinks}>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a onClick={() => scrollToSection('about')}>About</a>
+          <a onClick={() => scrollToSection('projects')}>Projects</a>
+          <a onClick={() => scrollToSection('contact')}>Contact</a>
         </div>
       </nav>
 
@@ -166,8 +176,18 @@ export default function Home() {
             Aspiring mind. Enthusiast of imaginative worlds, dark chocolate, and espresso.
           </p>
           <div className={styles.buttons}>
-            <button className={styles.primaryBtn}>Contact Me</button>
-            <button className={styles.secondaryBtn}>View Resume</button>
+            <button 
+              className={styles.primaryBtn}
+              onClick={() => scrollToSection('contact')}
+            >
+              Contact Me
+            </button>
+            <button 
+              className={styles.secondaryBtn}
+              onClick={() => setShowResumeModal(true)}
+            >
+              View Resume
+            </button>
           </div>
         </div>
       </div>
@@ -182,7 +202,33 @@ export default function Home() {
         />
       </div>
 
-      <section className={styles.aboutSection}>
+      {showResumeModal && (
+        <div 
+          className={styles.modal}
+          onClick={() => setShowResumeModal(false)}
+        >
+          <div className={styles.modalContent}>
+            <Image
+              src="/media/ideastruct.png" 
+              alt="Resume"
+              className={styles.modalImage}
+              fill
+              unoptimized
+            />
+            <button 
+              className={styles.modalClose}
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowResumeModal(false);
+              }}
+            >
+              <X size={24} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      <section id="about" className={styles.aboutSection}>
         <div className={styles.aboutText}>
           <h2>ABOUT ME</h2>
           <p>
@@ -221,7 +267,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.projects}>
+      <section id="projects" className={styles.projects}>
         <h2>PROJECTS</h2>
         <div className={styles.projectGrid}>
           {projects.map((project, index) => (
@@ -292,7 +338,7 @@ export default function Home() {
 
       <WorkTimeline />
       <EventsGallery />
-      <footer className={styles.footer}>
+      <footer id="contact" className={styles.footer}>
       <h2 className={styles.title}>Lets Connect!</h2>
       <div className={styles.contactInfo}>
         <a href="mailto:youremail@example.com" className={styles.contactItem}>
@@ -301,10 +347,10 @@ export default function Home() {
         <a href="tel:+1234567890" className={styles.contactItem}>
           <i className={`${styles.icon} fas fa-phone`}></i>+1 (315) 571-6223
         </a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+        <a href="https://www.linkedin.com/in/haylie-pedersen/" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
           <i className={`${styles.icon} fab fa-linkedin`}></i>LinkedIn
         </a>
-        <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+        <a href="https://github.com/hayliepedersen" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
           <i className={`${styles.icon} fab fa-github`}></i>GitHub
         </a>
       </div>

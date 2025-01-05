@@ -6,16 +6,30 @@
   --accent-secondary: #2C6E49;
   --card-bg: rgba(213, 187, 169, 0.1);
   --border-color: rgba(255, 255, 255, 0.2);
+  --border-accent: rgba(139, 69, 19, 0.1);
+  --nav-links: rgba(139, 69, 19, 0.6);
+  --timeline-card: rgba(255, 255, 255, 0.9);
+  --work-accent: rgba(255, 85, 0, 0.2);
+  --gradient-text: var(--accent-secondary);
+  --gradient-footer: #2c6e49e6;
+  --footer-accent: #FF5500;
 }
 
 :root[class~="dark"] {
   --background: #0f1117;
-  --text-primary: #e0e0ff;
-  --text-secondary: #a8b3cf;
+  --text-primary: white;
+  --text-secondary: white;
   --accent-primary: #ff36f7;
   --accent-secondary: #4f8aff;
   --card-bg: rgba(67, 39, 117, 0.15);
   --border-color: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(96, 6, 251, 0.246);
+  --nav-links: rgba(67, 39, 117, 0.15);
+  --timeline-card: #232226;
+  --work-accent: rgba(96, 6, 251, 0.246);
+  --gradient-text: linear-gradient(45deg, #ff36f7, #4f8aff, #6b3eff);
+  --gradient-footer: linear-gradient(135deg, #6b3eff 0%, #ff36f7 50%, #4f8aff 100%);
+  --footer-accent: #4f8aff;
 }
 
 html,

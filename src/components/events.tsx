@@ -23,8 +23,8 @@ const EventsGallery = () => {
     const events: Event[] = [
       { 
         id: 1, 
-        title: "First Hackathon @ HackMIT!",
-        description: "(Did not) win first place with my team at HackNEU 2024 building an AI-powered accessibility tool.",
+        title: "First Hackathon @ HackMIT",
+        description: "Attended my very first hackathon at MIT! Met some amazing people and made even better friends :)",
         date: "September 2024",
         images: [
           { url: "/media/events/hackMIT2.png", alt: "The team :)" },
