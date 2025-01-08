@@ -76,10 +76,10 @@ export default function Home() {
   const projects: Project[] = [
     {
       title: "soundwrap",
-      description: "A dynamic music visualization platform that transforms audio into stunning visual experiences. Built with React and the Web Audio API, it offers real-time audio analysis and interactive visualizations.",
+      description: "Built with React, soundwrap offers personalized reccomendations based on the authenticated user's input and Spotify data.",
       video: "/media/soundwrap-demo.mov",
-      tags: ["React", "TypeScript"],
-      liveLink: "https://soundwrap.demo",
+      tags: ["React", "Javascript", "CSS"],
+      // liveLink: "https://soundwrap.vercel.app/",
       githubLink: "https://github.com/yourusername/soundwrap"
     },
     {
@@ -88,31 +88,27 @@ export default function Home() {
       video: "/media/petfetch.mp4",
       poster: "/media/petfetchPoster.png",
       tags: ["Flask", "Pandas", "Streamlit", "Python", "MySQL", "Docker"],
-      liveLink: "https://soundwrap.demo",
       githubLink: "https://github.com/yourusername/soundwrap"
     },
     {
       title: "c4c admin dashboard",
-      description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
+      description: "Admin dashboard presented to Code4Community that allows admin users to add and delete new partner tiles across all servers.",
       video: "/media/c4c.mov",
-      tags: ["Next.js", "CSS", "Machine Learning"],
-      liveLink: "https://codewhisper.demo",
+      tags: ["Express", "React", "CSS"],
       githubLink: "https://github.com/yourusername/codewhisper"
     },
     {
       title: "pbcups",
-      description: "A dynamic music visualization platform that transforms audio into stunning visual experiences. Built with React and the Web Audio API, it offers real-time audio analysis and interactive visualizations.",
+      description: "First website I built! Uses HTML and CSS to showcase the wonderful treat of peanut butter cups.",
       video: "/media/pbcupblog.mov",
       tags: ["HTML", "CSS"],
-      liveLink: "https://codewhisper.demo",
       githubLink: "https://github.com/yourusername/codewhisper"
     },
     {
       title: "codewhisper",
-      description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
+      description: "An AI-powered code completion tool that utilizes Deepgram's speech to text API.",
       image: "/media/codewhisper.png",
-      tags: ["Next.js", "CSS", "Machine Learning"],
-      liveLink: "https://codewhisper.demo",
+      tags: ["Python", "Deepgram", "OpenAI", "TypeScript"],
       githubLink: "https://github.com/yourusername/codewhisper"
     },
     {
@@ -120,7 +116,6 @@ export default function Home() {
       description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
       image: "/media/ideastruct.png",
       tags: ["Next.js", "CSS", "Machine Learning"],
-      liveLink: "https://codewhisper.demo",
       githubLink: "https://github.com/yourusername/codewhisper"
     },
   ];
@@ -344,7 +339,7 @@ export default function Home() {
       <div id='events'>
         <EventsGallery />
       </div>
-      <footer className={styles.footer}>
+      <footer id='contact' className={styles.footer}>
       <h2 className={styles.title}>Lets Connect!</h2>
       <div className={styles.contactInfo}>
         <a href="mailto:pedersen.h@northeastern.edu" className={styles.contactItem}>
