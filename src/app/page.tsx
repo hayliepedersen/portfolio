@@ -76,7 +76,7 @@ export default function Home() {
   const projects: Project[] = [
     {
       title: "soundwrap",
-      description: "A personalized music recommendation engine that leverages Spotify's API to analyze listening patterns and generate curated playlists. Implemented user authentication, real-time data processing, and an intuitive interface for discovering new music based on detailed preference analysis.",
+      description: "A personalized music recommendation engine that leverages Spotify's API to analyze listening patterns and generate curated playlists.",
       video: "/media/soundwrap-demo.mov",
       tags: ["React", "Javascript", "CSS", "Spotify API", "OAuth"],
       // liveLink: "https://soundwrap.vercel.app/",
@@ -84,7 +84,7 @@ export default function Home() {
     },
     {
       title: "petfetch",
-      description: "A comprehensive pet adoption platform that streamlines the match-making process between shelters and potential adopters. Leverages machine learning for intelligent pet-owner matching, processes large datasets of animal profiles, and integrates a containerized microservices architecture.",
+      description: "A comprehensive pet adoption platform that streamlines the match-making process between shelters and potential adopters.",
       video: "/media/petfetch.mp4",
       poster: "/media/petfetchPoster.png",
       tags: ["Flask", "Pandas", "Streamlit", "Python", "MySQL", "Docker"],
@@ -92,28 +92,28 @@ export default function Home() {
     },
     {
       title: "c4c admin dashboard",
-      description: "A full-stack administrative interface developed for Code4Community that revolutionizes partner management across multiple servers. Features real-time updates, role-based access control, and an intuitive UI for managing partner relationships.",
+      description: "A full-stack administrative interface developed for Code4Community that revolutionizes partner management across multiple servers.",
       video: "/media/c4c.mov",
       tags: ["Express", "React", "CSS", "Node.js", "REST API"],
       githubLink: "https://github.com/hayliepedersen/c4c-challenge-fall-2024"
     },
     {
       title: "pbcups",
-      description: "First website I built! An engaging, responsive website showcasing the art and history of the wonderful peanut butter cups. Demonstrates fundamental web development concepts while maintaining visual appeal and user engagement.",
+      description: "First website I built! An engaging, responsive website showcasing the art and history of the wonderful peanut butter cups.",
       video: "/media/pbcupblog.mov",
       tags: ["HTML", "CSS", "Responsive Design"],
       githubLink: "https://github.com/hayliepedersen/pbcup-blog"
     },
     {
       title: "codewhisper",
-      description: "An innovative voice-controlled code completion tool that combines Deepgram's speech recognition with OpenAI's language models. Reduces development time by enabling hands-free coding assistance.",
+      description: "An innovative voice-controlled code completion tool that combines Deepgram's speech recognition with OpenAI's language models.",
       image: "/media/codewhisper.png",
       tags: ["Python", "Deepgram", "OpenAI", "TypeScript", "API Integration"],
       githubLink: "https://github.com/hayliepedersen/codewhisper-calhacks"
     },
     {
       title: "ideastruct",
-      description: "Learning platform that automatically generates interactive knowledge graphs from educational content. Utilizes OpenAI's language models to analyze articles and websites, featuring automatic node generation, relationship mapping, and content import functionality.",
+      description: "Learning platform that automatically generates interactive knowledge graphs from educational content.",
       image: "/media/ideastruct.png",
       tags: ["Next.js", "CSS", "Machine Learning", "OpenAI", "Graph Algorithms"],
       githubLink: "https://github.com/hayliepedersen/ideastruct-hackmit"
