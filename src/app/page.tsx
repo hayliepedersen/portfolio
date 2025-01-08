@@ -76,15 +76,15 @@ export default function Home() {
   const projects: Project[] = [
     {
       title: "soundwrap",
-      description: "Built with React, soundwrap offers personalized reccomendations based on the authenticated user's input and Spotify data.",
+      description: "A personalized music recommendation engine that leverages Spotify's API to analyze listening patterns and generate curated playlists. Implemented user authentication, real-time data processing, and an intuitive interface for discovering new music based on detailed preference analysis.",
       video: "/media/soundwrap-demo.mov",
-      tags: ["React", "Javascript", "CSS"],
+      tags: ["React", "Javascript", "CSS", "Spotify API", "OAuth"],
       // liveLink: "https://soundwrap.vercel.app/",
       githubLink: "https://github.com/yourusername/soundwrap"
     },
     {
       title: "petfetch",
-      description: "A dynamic music visualization platform that transforms audio into stunning visual experiences. Built with React and the Web Audio API, it offers real-time audio analysis and interactive visualizations.",
+      description: "A comprehensive pet adoption platform that streamlines the match-making process between shelters and potential adopters. Leverages machine learning for intelligent pet-owner matching, processes large datasets of animal profiles, and integrates a containerized microservices architecture.",
       video: "/media/petfetch.mp4",
       poster: "/media/petfetchPoster.png",
       tags: ["Flask", "Pandas", "Streamlit", "Python", "MySQL", "Docker"],
@@ -92,30 +92,30 @@ export default function Home() {
     },
     {
       title: "c4c admin dashboard",
-      description: "Admin dashboard presented to Code4Community that allows admin users to add and delete new partner tiles across all servers.",
+      description: "A full-stack administrative interface developed for Code4Community that revolutionizes partner management across multiple servers. Features real-time updates, role-based access control, and an intuitive UI for managing partner relationships.",
       video: "/media/c4c.mov",
-      tags: ["Express", "React", "CSS"],
+      tags: ["Express", "React", "CSS", "Node.js", "REST API"],
       githubLink: "https://github.com/yourusername/codewhisper"
     },
     {
       title: "pbcups",
-      description: "First website I built! Uses HTML and CSS to showcase the wonderful treat of peanut butter cups.",
+      description: "First website I built! An engaging, responsive website showcasing the art and history of the wonderful peanut butter cups. Demonstrates fundamental web development concepts while maintaining visual appeal and user engagement.",
       video: "/media/pbcupblog.mov",
-      tags: ["HTML", "CSS"],
+      tags: ["HTML", "CSS", "Responsive Design"],
       githubLink: "https://github.com/yourusername/codewhisper"
     },
     {
       title: "codewhisper",
-      description: "An AI-powered code completion tool that utilizes Deepgram's speech to text API.",
+      description: "An innovative voice-controlled code completion tool that combines Deepgram's speech recognition with OpenAI's language models. Reduces development time by enabling hands-free coding assistance.",
       image: "/media/codewhisper.png",
-      tags: ["Python", "Deepgram", "OpenAI", "TypeScript"],
+      tags: ["Python", "Deepgram", "OpenAI", "TypeScript", "API Integration"],
       githubLink: "https://github.com/yourusername/codewhisper"
     },
     {
       title: "ideastruct",
-      description: "An AI-powered code completion tool that helps developers write better code faster. Features include syntax highlighting, multi-language support, and intelligent suggestions.",
+      description: "Learning platform that automatically generates interactive knowledge graphs from educational content. Utilizes OpenAI's language models to analyze articles and websites, featuring automatic node generation, relationship mapping, and content import functionality.",
       image: "/media/ideastruct.png",
-      tags: ["Next.js", "CSS", "Machine Learning"],
+      tags: ["Next.js", "CSS", "Machine Learning", "OpenAI", "Graph Algorithms"],
       githubLink: "https://github.com/yourusername/codewhisper"
     },
   ];
