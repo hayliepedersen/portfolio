@@ -7,9 +7,8 @@ const ThemeToggle = () => {
 
   useEffect(() => {
     const userPreference = localStorage.getItem('theme');
-    const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    setIsDark(userPreference === 'dark' || (!userPreference && systemPreference));
+    
+    setIsDark(userPreference === 'dark');
     document.documentElement.classList.toggle('dark', isDark);
   }, [isDark]);
 
