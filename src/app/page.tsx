@@ -76,7 +76,7 @@ export default function Home() {
   const projects: Project[] = [
     {
       title: "soundwrap",
-      description: "A personalized music recommendation engine that leverages Spotify's API to analyze listening patterns and generate curated playlists.",
+      description: "Personalized music recommendation engine that leverages Spotify's API to analyze listening patterns and generate curated playlists.",
       video: "/media/soundwrap-demo.mov",
       tags: ["React", "Javascript", "CSS", "Spotify API", "OAuth"],
       // liveLink: "https://soundwrap.vercel.app/",
@@ -84,7 +84,7 @@ export default function Home() {
     },
     {
       title: "petfetch",
-      description: "A comprehensive pet adoption platform that streamlines the match-making process between shelters and potential adopters.",
+      description: "Comprehensive pet adoption platform that streamlines the match-making process between shelters and potential adopters.",
       video: "/media/petfetch.mp4",
       poster: "/media/petfetchPoster.png",
       tags: ["Flask", "Pandas", "Streamlit", "Python", "MySQL", "Docker"],
@@ -92,7 +92,7 @@ export default function Home() {
     },
     {
       title: "c4c admin dashboard",
-      description: "A full-stack administrative interface developed for Code4Community that revolutionizes partner management across multiple servers.",
+      description: "Full-stack administrative interface developed for Code4Community that revolutionizes partner management across multiple servers.",
       video: "/media/c4c.mov",
       tags: ["Express", "React", "CSS", "Node.js", "REST API"],
       githubLink: "https://github.com/hayliepedersen/c4c-challenge-fall-2024"
@@ -106,7 +106,7 @@ export default function Home() {
     },
     {
       title: "codewhisper",
-      description: "An innovative voice-controlled code completion tool that combines Deepgram's speech recognition with OpenAI's language models.",
+      description: "Voice-controlled code completion tool that combines Deepgram's speech recognition with OpenAI's language models.",
       image: "/media/codewhisper.png",
       tags: ["Python", "Deepgram", "OpenAI", "TypeScript", "API Integration"],
       githubLink: "https://github.com/hayliepedersen/codewhisper-calhacks"
