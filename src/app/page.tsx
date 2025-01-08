@@ -1,17 +1,18 @@
 "use client";
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { GithubIcon, ExternalLink, X } from 'lucide-react';
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { GithubIcon, ExternalLink, X } from "lucide-react";
 import styles from "./page.module.css";
-import { WorkTimeline } from '@/components/work';
-import { EventsGallery } from '@/components/events';
-import ThemeToggle from '@/components/themetoggle';
-// import ParticleEffect from '@/components/particle';
+import { WorkTimeline } from "@/components/work";
+import { EventsGallery } from "@/components/events";
+import ThemeToggle from "@/components/themetoggle";
+import VideoPlayer from "@/components/videoplayer";
 
 interface Project {
   title: string;
   description: string;
   video?: string;
+  videoId?: string;
   image?: string;
   poster?: string;
   tags: string[];
@@ -22,101 +23,116 @@ interface Project {
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showResumeModal, setShowResumeModal] = useState(false);
-  
+
   useEffect(() => {
     // Add sliding border animation on mount
     const elements = document.querySelectorAll(`.${styles.slidingBorder}`);
     setTimeout(() => {
-      elements.forEach(el => el.classList.add(styles.animate));
+      elements.forEach((el) => el.classList.add(styles.animate));
     }, 100);
   }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isMenuOpen && !(event.target as Element).closest(`.${styles.mobileNav}`)) {
+      if (
+        isMenuOpen &&
+        !(event.target as Element).closest(`.${styles.mobileNav}`)
+      ) {
         setIsMenuOpen(false);
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
   }, [isMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
       const workSection = document.querySelector(`.${styles.workExperience}`);
       if (!workSection) return;
-  
+
       const rect = workSection.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-  
+
       if (isVisible) {
         workSection.classList.add(styles.visible);
       } else {
         workSection.classList.remove(styles.visible);
       }
     };
-  
+
     handleScroll();
-  
-    window.addEventListener('scroll', handleScroll);
-  
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false); 
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false);
     }
   };
 
   const projects: Project[] = [
     {
       title: "soundwrap",
-      description: "Personalized music recommendation engine that leverages Spotify's API to analyze listening patterns and generate curated playlists.",
-      video: "/media/soundwrap-demo.mov",
+      description:
+        "Personalized music recommendation engine that leverages Spotify's API to analyze listening patterns and generate curated playlists.",
+      videoId: "1045070217",
       tags: ["React", "Javascript", "CSS", "Spotify API", "OAuth"],
       // liveLink: "https://soundwrap.vercel.app/",
-      githubLink: "https://github.com/hayliepedersen/soundwrap"
+      githubLink: "https://github.com/hayliepedersen/soundwrap",
     },
     {
       title: "petfetch",
-      description: "Comprehensive pet adoption platform that streamlines the match-making process between shelters and potential adopters.",
-      video: "/media/petfetch.mp4",
+      description:
+        "Comprehensive pet adoption platform that streamlines the match-making process between shelters and potential adopters.",
+      videoId: "1045069421",
       poster: "/media/petfetchPoster.png",
       tags: ["Flask", "Pandas", "Streamlit", "Python", "MySQL", "Docker"],
-      githubLink: "https://github.com/hayliepedersen/petalytics-petfetch"
+      githubLink: "https://github.com/hayliepedersen/petalytics-petfetch",
     },
     {
       title: "c4c admin dashboard",
-      description: "Full-stack administrative interface developed for Code4Community that revolutionizes partner management across multiple servers.",
-      video: "/media/c4c.mov",
+      description:
+        "Full-stack administrative interface developed for Code4Community that optimizes partner management across multiple servers.",
+      videoId: "1045068778",
       tags: ["Express", "React", "CSS", "Node.js", "REST API"],
-      githubLink: "https://github.com/hayliepedersen/c4c-challenge-fall-2024"
+      githubLink: "https://github.com/hayliepedersen/c4c-challenge-fall-2024",
     },
     {
       title: "pbcups",
-      description: "First website I built! An engaging, responsive website showcasing the art and history of the wonderful peanut butter cups.",
-      video: "/media/pbcupblog.mov",
+      description:
+        "First website I built! An engaging, responsive website showcasing the art and history of the wonderful peanut butter cups.",
+      videoId: "1045064467",
       tags: ["HTML", "CSS", "Responsive Design"],
-      githubLink: "https://github.com/hayliepedersen/pbcup-blog"
+      githubLink: "https://github.com/hayliepedersen/pbcup-blog",
     },
     {
       title: "codewhisper",
-      description: "Voice-controlled code completion tool that combines Deepgram's speech recognition with OpenAI's language models.",
+      description:
+        "Voice-controlled code completion tool that combines Deepgram's speech recognition with OpenAI's language models.",
       image: "/media/codewhisper.png",
       tags: ["Python", "Deepgram", "OpenAI", "TypeScript", "API Integration"],
-      githubLink: "https://github.com/hayliepedersen/codewhisper-calhacks"
+      githubLink: "https://github.com/hayliepedersen/codewhisper-calhacks",
     },
     {
       title: "ideastruct",
-      description: "Learning platform that automatically generates interactive knowledge graphs from educational content.",
+      description:
+        "Learning platform that automatically generates interactive knowledge graphs from educational content.",
       image: "/media/ideastruct.png",
-      tags: ["Next.js", "CSS", "Machine Learning", "OpenAI", "Graph Algorithms"],
-      githubLink: "https://github.com/hayliepedersen/ideastruct-hackmit"
+      tags: [
+        "Next.js",
+        "CSS",
+        "Machine Learning",
+        "OpenAI",
+        "Graph Algorithms",
+      ],
+      githubLink: "https://github.com/hayliepedersen/ideastruct-hackmit",
     },
   ];
 
@@ -134,31 +150,35 @@ export default function Home() {
 
       {/* Mobile Navigation */}
       <div className={styles.mobileNav}>
-      <button 
-        className={styles.hamburger}
-        onClick={(e) => {
-          e.stopPropagation();
-          setIsMenuOpen(!isMenuOpen);
-        }}
-        aria-label="Toggle menu"
-      >
-        ☰
-      </button>
-      <div className={`${styles.dropdownContent} ${isMenuOpen ? styles.active : ''}`}>
-        <a onClick={() => scrollToSection('about')}>About</a>
-        <a onClick={() => scrollToSection('work')}>Work</a>
-        <a onClick={() => scrollToSection('projects')}>Projects</a>
-        <a onClick={() => scrollToSection('events')}>Events</a>
-      </div>
+        <button
+          className={styles.hamburger}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsMenuOpen(!isMenuOpen);
+          }}
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+        <div
+          className={`${styles.dropdownContent} ${
+            isMenuOpen ? styles.active : ""
+          }`}
+        >
+          <a onClick={() => scrollToSection("about")}>About</a>
+          <a onClick={() => scrollToSection("work")}>Work</a>
+          <a onClick={() => scrollToSection("projects")}>Projects</a>
+          <a onClick={() => scrollToSection("events")}>Events</a>
+        </div>
       </div>
 
       {/* Desktop Navigation */}
       <nav className={`${styles.navbar} ${styles.slidingBorder}`}>
         <div className={styles.navLinks}>
-          <a onClick={() => scrollToSection('about')}>About</a>
-          <a onClick={() => scrollToSection('work')}>Work</a>
-          <a onClick={() => scrollToSection('projects')}>Projects</a>
-          <a onClick={() => scrollToSection('events')}>Events</a>
+          <a onClick={() => scrollToSection("about")}>About</a>
+          <a onClick={() => scrollToSection("work")}>Work</a>
+          <a onClick={() => scrollToSection("projects")}>Projects</a>
+          <a onClick={() => scrollToSection("events")}>Events</a>
         </div>
       </nav>
 
@@ -170,16 +190,17 @@ export default function Home() {
         <div className={styles.mainContent}>
           <p className={styles.title}>Software Developer</p>
           <p className={styles.bio}>
-            Aspiring mind. Enthusiast of imaginative worlds, dark chocolate, and espresso.
+            Aspiring mind. Enthusiast of imaginative worlds, dark chocolate, and
+            espresso.
           </p>
           <div className={styles.buttons}>
-            <button 
+            <button
               className={styles.primaryBtn}
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
             >
               Contact Me
             </button>
-            <button 
+            <button
               className={styles.secondaryBtn}
               onClick={() => setShowResumeModal(true)}
             >
@@ -191,7 +212,7 @@ export default function Home() {
 
       <div className={styles.cat}>
         <Image
-          src="/media/cat.gif" 
+          src="/media/cat.gif"
           alt="Cat"
           width={50}
           height={50}
@@ -200,19 +221,16 @@ export default function Home() {
       </div>
 
       {showResumeModal && (
-        <div 
-          className={styles.modal}
-          onClick={() => setShowResumeModal(false)}
-        >
+        <div className={styles.modal} onClick={() => setShowResumeModal(false)}>
           <div className={styles.modalContent}>
             <Image
-              src="/media/resume.png" 
+              src="/media/resume.png"
               alt="Resume"
               className={styles.modalImage}
               fill
               unoptimized
             />
-            <button 
+            <button
               className={styles.modalClose}
               onClick={(e) => {
                 e.stopPropagation();
@@ -233,30 +251,35 @@ export default function Home() {
             Hi! Welcome to this little space about me :)
           </p>
           <p>
-            Im Haylie, an aspiring software developer with a passion for creating elegant solutions to complex problems. 
-            When Im not coding, you can find me exploring new technologies, admiring natures beauty, or enjoying a
-            vanilla latte while reading the latest fantasy novel.
+            Im Haylie, an aspiring software developer with a passion for
+            creating elegant solutions to complex problems. When Im not coding,
+            you can find me exploring new technologies, admiring natures beauty,
+            or enjoying a vanilla latte while reading the latest fantasy novel.
           </p>
           <p>
-            My journey in software development started with a curiosity about how things work, 
-            and that curiosity has only grown stronger with each project I undertake.
+            My journey in software development started with a curiosity about
+            how things work, and that curiosity has only grown stronger with
+            each project I undertake.
           </p>
         </div>
-        
+
         <div className={styles.imageContainer}>
           <svg width="0" height="0">
             <defs>
               <mask id="flowerMask">
-                <path fill="white" d="
+                <path
+                  fill="white"
+                  d="
                   M200,0 C160,40 80,40 40,80 C0,120 0,200 40,240 
                   C80,280 160,280 200,320 C240,280 320,280 360,240 
                   C400,200 400,120 360,80 C320,40 240,40 200,0 Z
-                "/>
+                "
+                />
               </mask>
             </defs>
           </svg>
-          <Image 
-            src="/media/portrait.jpeg" 
+          <Image
+            src="/media/portrait.jpeg"
             alt="About me"
             fill
             className={styles.maskedImage}
@@ -272,40 +295,42 @@ export default function Home() {
               <div className={styles.projectContent}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                
-                {project.video && (
+
+                {project.videoId ? (
+                  <VideoPlayer videoId={project.videoId} />
+                ) : project.video ? (
                   <div className={styles.videoWrapper}>
-                    <video 
-                      controls 
+                    <video
+                      controls
                       className={styles.video}
-                      poster={project.poster} 
+                      poster={project.poster}
                     >
                       <source src={project.video} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
+                ) : (
+                  project.image && (
+                    <div className={styles.videoWrapper}>
+                      <Image
+                        src={project.image}
+                        alt="Project Image"
+                        fill
+                        className={styles.video}
+                      />
+                    </div>
+                  )
                 )}
 
-                {project.image && (
-                  <div className={styles.videoWrapper}>
-                    <Image 
-                      src={project.image} 
-                      alt="Project Image"
-                      fill
-                      className={styles.video}
-                     />
-                  </div>
-                )}
-                
                 <div className={styles.tags}>
                   {project.tags.map((tag, i) => (
                     <span key={i}>{tag}</span>
                   ))}
                 </div>
-                
+
                 <div className={styles.projectLinks}>
                   {project.liveLink && (
-                    <a 
+                    <a
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -316,7 +341,7 @@ export default function Home() {
                     </a>
                   )}
                   {project.githubLink && (
-                    <a 
+                    <a
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -333,28 +358,42 @@ export default function Home() {
         </div>
       </section>
 
-      <div id='work'>
+      <div id="work">
         <WorkTimeline />
       </div>
-      <div id='events'>
+      <div id="events">
         <EventsGallery />
       </div>
-      <footer id='contact' className={styles.footer}>
-      <h2 className={styles.title}>Lets Connect!</h2>
-      <div className={styles.contactInfo}>
-        <a href="mailto:pedersen.h@northeastern.edu" className={styles.contactItem}>
-          <i className={`${styles.icon} fas fa-envelope`}></i>pedersen.h@northeastern.edu
-        </a>
-        <a href="tel:+13155716223" className={styles.contactItem}>
-          <i className={`${styles.icon} fas fa-phone`}></i>+1 (315) 571-6223
-        </a>
-        <a href="https://www.linkedin.com/in/haylie-pedersen/" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
-          <i className={`${styles.icon} fab fa-linkedin`}></i>LinkedIn
-        </a>
-        <a href="https://github.com/hayliepedersen" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
-          <i className={`${styles.icon} fab fa-github`}></i>GitHub
-        </a>
-      </div>
+      <footer id="contact" className={styles.footer}>
+        <h2 className={styles.title}>Lets Connect!</h2>
+        <div className={styles.contactInfo}>
+          <a
+            href="mailto:pedersen.h@northeastern.edu"
+            className={styles.contactItem}
+          >
+            <i className={`${styles.icon} fas fa-envelope`}></i>
+            pedersen.h@northeastern.edu
+          </a>
+          <a href="tel:+13155716223" className={styles.contactItem}>
+            <i className={`${styles.icon} fas fa-phone`}></i>+1 (315) 571-6223
+          </a>
+          <a
+            href="https://www.linkedin.com/in/haylie-pedersen/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.contactItem}
+          >
+            <i className={`${styles.icon} fab fa-linkedin`}></i>LinkedIn
+          </a>
+          <a
+            href="https://github.com/hayliepedersen"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.contactItem}
+          >
+            <i className={`${styles.icon} fab fa-github`}></i>GitHub
+          </a>
+        </div>
       </footer>
       <ThemeToggle />
     </div>
