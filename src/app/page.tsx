@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { GithubIcon, ExternalLink, X } from "lucide-react";
+import { GithubIcon, ExternalLink, X, Menu } from "lucide-react";
 import styles from "./page.module.css";
 import { WorkTimeline } from "@/components/work";
 import { EventsGallery } from "@/components/events";
@@ -21,31 +21,29 @@ interface Project {
 }
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
   const [showResumeModal, setShowResumeModal] = useState(false);
 
   useEffect(() => {
-    // Add sliding border animation on mount
     const elements = document.querySelectorAll(`.${styles.slidingBorder}`);
     setTimeout(() => {
       elements.forEach((el) => el.classList.add(styles.animate));
     }, 100);
   }, []);
 
-  // Close menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isMenuOpen &&
-        !(event.target as Element).closest(`.${styles.mobileNav}`)
-      ) {
-        setIsMenuOpen(false);
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && navbarOpen) {
+        setNavbarOpen(false);
       }
     };
 
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [isMenuOpen]);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [navbarOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +71,7 @@ export default function Home() {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
+      setNavbarOpen(false);
     }
   };
 
@@ -138,31 +136,24 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      {/* <ParticleEffect /> */}
-      <style>
-        {`
-          ::selection {
-            color: #010201; 
-            background: #FF5500; 
-          }
-        `}
-      </style>
+      <ThemeToggle />
 
       {/* Mobile Navigation */}
       <div className={styles.mobileNav}>
-        <button
-          className={styles.hamburger}
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsMenuOpen(!isMenuOpen);
-          }}
-          aria-label="Toggle menu"
-        >
-          ☰
-        </button>
+        <div className={styles.mobileMenu}>
+          {!navbarOpen ? (
+            <button onClick={() => setNavbarOpen(true)}>
+              <Menu strokeWidth="1" size={30}/>
+            </button>
+          ) : (
+            <button onClick={() => setNavbarOpen(false)}>
+              <X strokeWidth="1" size={30}/>
+            </button>
+          )}
+        </div>
         <div
           className={`${styles.dropdownContent} ${
-            isMenuOpen ? styles.active : ""
+            navbarOpen ? styles.active : ""
           }`}
         >
           <a onClick={() => scrollToSection("about")}>About</a>
@@ -170,6 +161,9 @@ export default function Home() {
           <a onClick={() => scrollToSection("projects")}>Projects</a>
           <a onClick={() => scrollToSection("events")}>Events</a>
         </div>
+        {/* <div className={styles.mobileThemeToggle}>
+          <ThemeToggle />
+        </div> */}
       </div>
 
       {/* Desktop Navigation */}
@@ -251,9 +245,9 @@ export default function Home() {
             Hi! Welcome to this little space about me :)
           </p>
           <p>
-            Im Haylie, an aspiring software developer with a passion for
-            creating elegant solutions to complex problems. When Im not coding,
-            you can find me exploring new technologies, admiring natures beauty,
+            I&apos;m Haylie, an aspiring software developer with a passion for
+            creating elegant solutions to complex problems. When I&apos;m not coding,
+            you can find me exploring new technologies, admiring nature&apos;s beauty,
             or enjoying a vanilla latte while reading the latest fantasy novel.
           </p>
           <p>
@@ -395,7 +389,9 @@ export default function Home() {
           </a>
         </div>
       </footer>
-      <ThemeToggle />
+      {/* <div className={styles.desktopThemeToggle}>
+        <ThemeToggle />
+      </div> */}
     </div>
   );
 }
