@@ -24,7 +24,7 @@ const EventsGallery = () => {
       { 
         id: 1, 
         title: "First Hackathon @ HackMIT",
-        description: "Attended my very first hackathon at MIT! Met some amazing people and made even better friends :)",
+        description: "Started my hackathon journey at MIT! Met some amazing people and made even better friends :)",
         date: "September 2024",
         images: [
           { url: "/media/events/hackMIT2.png", alt: "The team :)" },
@@ -35,13 +35,35 @@ const EventsGallery = () => {
       },
       { 
         id: 2, 
-        title: "Joined NER",
+        title: "Google DevFest",
+        description: "Attended Google DevFest, gained hands-on experience with cutting-edge technologies and connected with a vibrant community of developers.",
+        date: "November 2024",
+        images: [
+          { url: "/media/events/devfest1.jpeg", alt: "Speaker Event" },
+          { url: "/media/events/devfest3.jpeg", alt: "DevFest Board" },
+          { url: "/media/events/devfest2.jpeg", alt: "Inside the Building" }
+        ]
+      },
+      { 
+        id: 3, 
+        title: "Joined NER :)",
         description: "Joined Northeastern Electric Racing as a software developer. Now working on the team website and learning about electric vehicles!",
         date: "January 2024",
         images: [
           { url: "/media/events/car.jpeg", alt: "NER Car" },
           { url: "/media/events/finishline.png", alt: "Finishline Website" },
           { url: "/media/events/meeting.jpeg", alt: "Team meeting" },
+        ]
+      },
+      { 
+        id: 4, 
+        title: "CalHacks, San Francsisco Trip",
+        description: "Made my very first trip to California! Developed a VS Code extension at CalHacks that enables hands-free programming.",
+        date: "October 2024",
+        images: [
+          { url: "/media/events/calhacks3.jpeg", alt: "Painted Laides Houses" },
+          { url: "/media/events/calhacks1.jpeg", alt: "The team :)" },
+          { url: "/media/events/calhacks2.jpeg", alt: "Google Speaker" }
         ]
       }
     ];

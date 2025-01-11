@@ -829,6 +829,7 @@
   gap: 1rem;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 2rem;
 }
 
 .heading {
@@ -859,7 +860,7 @@
 
 .eventsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr); 
   gap: 2rem;
   opacity: 0;
   animation: fadeInUp 0.5s ease forwards;
