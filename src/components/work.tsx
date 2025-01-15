@@ -14,14 +14,14 @@ const WorkTimeline = () => {
       title: "Crew Trainer",
       company: "McDonald's",
       period: "2021 - 2022",
-      description: "Oversaw the instruction of new employees and guided coworkers through the fundamentals of job requirements. Enhanced team collaboration by developing clear communication strategies and tools.",
+      description: "Oversaw the instruction of new employees and guided coworkers through the fundamentals of job requirements. Enhanced team collaboration through developing clear communication strategies and tools.",
       icon: "🍟"
     },
     {
       title: "Sandwich Artist",
       company: "Crust Kitchen & Bar",
       period: "2022 - 2023",
-      description: "Greeted customers as they entered the restaurant and prepared various food items. Leveraged problem-solving skills to address real-time challenges in a dynamic work environment.",
+      description: "Greeted customers as they entered the restaurant and prepared various food items. Honed problem-solving skills to address real-time challenges in a dynamic work environment.",
       icon: "🍞"
     },
     {

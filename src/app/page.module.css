@@ -1,23 +1,35 @@
 @font-face {
   font-family: 'ButlerUltraLight';
-    src: url('/fonts/Butler-UltraLight.woff2') format('woff2'), 
+  src: url('/fonts/Butler-UltraLight.woff2') format('woff2'), 
          url('/fonts/Butler-UltraLight.woff') format('woff');  
-    font-weight: 300; 
-    font-style: normal;
+  font-weight: 200; 
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'ButlerLight';
-    src: url('/fonts/Butler-Light.woff2') format('woff2'), 
+  src: url('/fonts/Butler-Light.woff2') format('woff2'), 
          url('/fonts/Butler-Light.woff') format('woff');  
-    font-weight: 500; 
-    font-style: normal;
+  font-weight: 500; 
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'ButlerStencilUltraLight';
-    src: url('/fonts/ButlerStencil-UltraLight.woff2') format('woff2'), 
+  src: url('/fonts/ButlerStencil-UltraLight.woff2') format('woff2'), 
          url('/fonts/ButlerStencil-UltraLight.woff') format('woff');
+}
+
+@supports (-webkit-appearance:none) and (not (-moz-appearance:none)) {
+  .headerSection h1,
+  .footer h2,
+  .timelineCard h3,
+  .sectionTitle,
+  .aboutText h2,
+  .projectCard h3,
+  .projects h2 {
+    font-weight: 250;
+  }
 }
 
 .page {
@@ -59,7 +71,7 @@
 
 .headerSection {
   font-family: 'ButlerStencilUltraLight', serif;
-  font-weight: 200; 
+  font-size: 200;
   font-stretch: condensed; 
   transform: scaleX(0.9) scaleY(1.2);
   text-align: center;
@@ -834,7 +846,7 @@
 
 .heading {
   font-size: 1.25rem; 
-  font-weight: 600; 
+  font-weight: 500; 
   color: var(--accent-secondary);
   margin-bottom: -10px; 
 }

@@ -35,8 +35,8 @@ const EventsGallery = () => {
       },
       { 
         id: 2, 
-        title: "Google DevFest",
-        description: "Attended Google DevFest, gained hands-on experience with cutting-edge technologies and connected with a vibrant community of developers.",
+        title: "Google DevFest !!",
+        description: "Attended Google DevFest, gained hands-on experience with cutting-edge technologies and connected with a vibrant community of developers. (Ate a lot of yummy food)",
         date: "November 2024",
         images: [
           { url: "/media/events/devfest1.jpeg", alt: "Speaker Event" },
