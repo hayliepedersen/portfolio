@@ -77,13 +77,13 @@ export default function Home() {
 
   const projects: Project[] = [
     {
-      title: "soundwrap",
+      title: "aurora",
       description:
         "Personalized music recommendation engine that leverages Spotify's API to analyze listening patterns and generate curated playlists.",
       videoId: "1045070217",
       tags: ["React", "Javascript", "CSS", "Spotify API", "OAuth"],
-      // liveLink: "https://soundwrap.vercel.app/",
-      githubLink: "https://github.com/hayliepedersen/soundwrap",
+      // liveLink: "https://auroraplaylists.vercel.app/",
+      githubLink: "https://github.com/hayliepedersen/aurora",
     },
     {
       title: "petfetch",

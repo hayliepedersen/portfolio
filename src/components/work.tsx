@@ -35,7 +35,7 @@ const WorkTimeline = () => {
       title: "Software Developer",
       company: "Northeastern Electrical Racing",
       period: "2024 - Present",
-      description: "Develop and maintain team website utilizing TypeScript, Prisma, and Express. Optimize site development workflows with Postman and Docker containerization.",
+      description: "Develop and maintain team website utilizing TypeScript, React, Prisma, and Express. Optimize site development workflows with Postman and Docker containerization.",
       icon: "🏎️"
     },
   ];
