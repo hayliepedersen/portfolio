@@ -57,7 +57,7 @@ const EventsGallery = () => {
       },
       { 
         id: 4, 
-        title: "CalHacks, San Francsisco Trip",
+        title: "CalHacks, San Francisco Trip",
         description: "Made my very first trip to California! Developed a VS Code extension at CalHacks that enables hands-free programming.",
         date: "October 2024",
         images: [
