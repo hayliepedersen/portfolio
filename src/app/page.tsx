@@ -7,6 +7,7 @@ import { WorkTimeline } from "@/components/work";
 import { EventsGallery } from "@/components/events";
 import ThemeToggle from "@/components/themetoggle";
 import VideoPlayer from "@/components/videoplayer";
+import SpotifySection from '@/components/spotifysection';
 
 interface Project {
   title: string;
@@ -358,6 +359,7 @@ export default function Home() {
       <div id="events">
         <EventsGallery />
       </div>
+      <SpotifySection />
       <footer id="contact" className={styles.footer}>
         <h2 className={styles.title}>Lets Connect!</h2>
         <div className={styles.contactInfo}>
@@ -389,9 +391,6 @@ export default function Home() {
           </a>
         </div>
       </footer>
-      {/* <div className={styles.desktopThemeToggle}>
-        <ThemeToggle />
-      </div> */}
     </div>
   );
 }
