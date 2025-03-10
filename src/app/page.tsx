@@ -83,7 +83,7 @@ export default function Home() {
         "Personalized music recommendation engine that leverages Spotify's API to analyze listening patterns and generate curated playlists.",
       videoId: "1045070217",
       tags: ["React", "Javascript", "CSS", "Spotify API", "OAuth"],
-      // liveLink: "https://auroraplaylists.vercel.app/",
+      liveLink: "https://auroraplaylists.vercel.app/",
       githubLink: "https://github.com/hayliepedersen/aurora",
     },
     {
@@ -162,9 +162,6 @@ export default function Home() {
           <a onClick={() => scrollToSection("projects")}>Projects</a>
           <a onClick={() => scrollToSection("events")}>Events</a>
         </div>
-        {/* <div className={styles.mobileThemeToggle}>
-          <ThemeToggle />
-        </div> */}
       </div>
 
       {/* Desktop Navigation */}
