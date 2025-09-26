@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styles from "@/app/page.module.css";
 
 const SpotifySection = () => {
@@ -10,12 +10,12 @@ const SpotifySection = () => {
             <h3>currently on repeat ♡</h3>
           </div>
           <div className={styles.spotifyContent}>
-            <iframe 
-              src="https://open.spotify.com/embed/track/7sxjOcfj6F1uaTL6rySXa5?utm_source=generator" 
+            <iframe
+              src="https://open.spotify.com/embed/track/2FUwEr2BAfyebUBSOeLwO8?utm_source=generator"
               className={styles.spotifyEmbed}
               width="100%"
               height="352"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
             />
           </div>
