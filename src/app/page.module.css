@@ -1,26 +1,26 @@
 @font-face {
-  font-family: 'ButlerUltraLight';
-  src: url('/fonts/Butler-UltraLight.woff2') format('woff2'), 
-         url('/fonts/Butler-UltraLight.woff') format('woff');  
-  font-weight: 200; 
+  font-family: "ButlerUltraLight";
+  src: url("/fonts/Butler-UltraLight.woff2") format("woff2"),
+    url("/fonts/Butler-UltraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ButlerLight';
-  src: url('/fonts/Butler-Light.woff2') format('woff2'), 
-         url('/fonts/Butler-Light.woff') format('woff');  
-  font-weight: 500; 
+  font-family: "ButlerLight";
+  src: url("/fonts/Butler-Light.woff2") format("woff2"),
+    url("/fonts/Butler-Light.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ButlerStencilUltraLight';
-  src: url('/fonts/ButlerStencil-UltraLight.woff2') format('woff2'), 
-         url('/fonts/ButlerStencil-UltraLight.woff') format('woff');
+  font-family: "ButlerStencilUltraLight";
+  src: url("/fonts/ButlerStencil-UltraLight.woff2") format("woff2"),
+    url("/fonts/ButlerStencil-UltraLight.woff") format("woff");
 }
 
-@supports (-webkit-appearance:none) and (not (-moz-appearance:none)) {
+@supports (-webkit-appearance: none) and (not (-moz-appearance: none)) {
   .headerSection h1,
   .footer h2,
   .timelineCard h3,
@@ -33,7 +33,7 @@
 }
 
 .page {
-  font-family: 'ButlerUltraLight', serif;
+  font-family: "ButlerUltraLight", serif;
   min-height: 100vh;
   background-color: var(--background);
   color: var(--text-primary);
@@ -70,9 +70,9 @@
 }
 
 .headerSection {
-  font-family: 'ButlerStencilUltraLight', serif;
+  font-family: "ButlerStencilUltraLight", serif;
   font-size: 200;
-  font-stretch: condensed; 
+  font-stretch: condensed;
   transform: scaleX(0.9) scaleY(1.2);
   text-align: center;
   padding: 4rem 0 2rem 0;
@@ -112,11 +112,11 @@
 }
 
 .profileSection {
-  padding: 3rem 1rem; 
+  padding: 3rem 1rem;
   position: relative;
-  max-width: 1200px; 
+  max-width: 1200px;
   margin: 0 auto;
-  width: 65%; 
+  width: 65%;
 }
 
 .title {
@@ -141,10 +141,10 @@
   margin-top: 2rem;
 }
 
-.primaryBtn, 
+.primaryBtn,
 .secondaryBtn {
-  font-family: 'ButlerLight', sans-serif;
-  font-size: .9rem;
+  font-family: "ButlerLight", sans-serif;
+  font-size: 0.9rem;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   cursor: pointer;
@@ -181,7 +181,7 @@
 }
 
 .projects h2 {
-  font-family: 'ButlerStencilUltraLight', serif;
+  font-family: "ButlerStencilUltraLight", serif;
   font-size: clamp(2rem, 5vw, 3rem);
   color: var(--accent-secondary);
   text-align: center;
@@ -191,7 +191,7 @@
 }
 
 .projects h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -211,6 +211,14 @@
   margin: 0 auto;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media (min-width: 1200px) {
+  .projectGrid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
 
 .projectCard {
@@ -236,7 +244,7 @@
 }
 
 .projectCard h3 {
-  font-family: 'ButlerStencilUltraLight', serif;
+  font-family: "ButlerStencilUltraLight", serif;
   font-size: 1.75rem;
   color: var(--accent-secondary);
   margin-bottom: 1rem;
@@ -245,7 +253,7 @@
 }
 
 .projectCard h3::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -268,7 +276,7 @@
 
 .videoWrapper {
   position: relative;
-  padding-top: 56.25%; 
+  padding-top: 56.25%;
   margin-bottom: 1.5rem;
   margin-top: -10px;
   border-radius: 10px;
@@ -286,7 +294,7 @@
 }
 
 .tags {
-  font-family: 'ButlerLight', sans-serif;
+  font-family: "ButlerLight", sans-serif;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -310,7 +318,7 @@
 }
 
 .projectLinks {
-  font-family: 'ButlerLight', sans-serif;
+  font-family: "ButlerLight", sans-serif;
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
@@ -353,13 +361,13 @@
     width: 95%;
     margin-top: -200px;
   }
-  
+
   .projectGrid {
     grid-template-columns: 1fr;
     padding: 0 2rem;
     gap: 2rem;
   }
-  
+
   .projectCard {
     min-height: auto;
     width: 130%;
@@ -463,7 +471,7 @@
 
 .slidingBorder::before,
 .slidingBorder::after {
-  content: '';
+  content: "";
   position: absolute;
   background: var(--border-accent);
   transition: transform 2s ease-out;
@@ -493,9 +501,9 @@
 
 /* Mobile Navigation */
 .mobileNav {
-  display: none;  /* Hidden by default */
+  display: none; /* Hidden by default */
   width: 100%;
-  background: var(--border-accent);;
+  background: var(--border-accent);
   padding: 0.5rem;
   position: fixed;
   top: 0;
@@ -521,7 +529,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: var(--border-accent);;
+  background: var(--border-accent);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -531,7 +539,7 @@
   color: var(--text-secondary);
   text-decoration: none;
   text-align: center;
-  font-family: 'ButlerUltraLight', serif;
+  font-family: "ButlerUltraLight", serif;
 }
 
 .dropdownContent a:hover {
@@ -544,7 +552,7 @@
 
 .cat {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   margin-top: -2.15rem;
 }
@@ -573,7 +581,7 @@
 }
 
 .aboutText h2 {
-  font-family: 'ButlerStencilUltraLight', serif;
+  font-family: "ButlerStencilUltraLight", serif;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   margin-bottom: 1.5rem;
   color: var(--accent-secondary);
@@ -622,7 +630,7 @@
 
 .workExperience::before,
 .workExperience::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   width: 100%;
@@ -639,7 +647,7 @@
 .workExperience::after {
   top: auto;
   bottom: 0;
-  animation-delay: -4s; 
+  animation-delay: -4s;
 }
 
 .workExperience.visible::before {
@@ -648,12 +656,12 @@
 }
 
 .workExperience h2.sectionTitle::before {
-  content: 'MY JOURNEY SO FAR';
+  content: "MY JOURNEY SO FAR";
   position: absolute;
   top: -1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'ButlerLight', serif;
+  font-family: "ButlerLight", serif;
   font-size: 1rem;
   color: var(--accent-primary);
   opacity: 0.7;
@@ -739,7 +747,7 @@
 }
 
 .timelineCard::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -766,7 +774,7 @@
 }
 
 .timelineCard h3 {
-  font-family: 'ButlerStencilUltraLight', serif;
+  font-family: "ButlerStencilUltraLight", serif;
   font-size: 1.25rem;
   color: var(--accent-secondary);
   margin-bottom: 0.5rem;
@@ -774,7 +782,7 @@
 
 .company {
   color: var(--text-secondary);
-  font-family: 'ButlerLight', sans-serif;
+  font-family: "ButlerLight", sans-serif;
 }
 
 .period {
@@ -788,7 +796,7 @@
 }
 
 .sectionTitle {
-  font-family: 'ButlerStencilUltraLight', serif;
+  font-family: "ButlerStencilUltraLight", serif;
   font-size: clamp(2rem, 5vw, 3rem);
   color: var(--accent-secondary);
   text-align: center;
@@ -814,7 +822,7 @@
   background: rgba(213, 187, 169, 0.1);
   border: 1px solid rgba(44, 110, 73, 0.1);
   height: auto;
-  min-height: 500px; 
+  min-height: 500px;
   display: flex;
   flex-direction: column;
 }
@@ -831,7 +839,7 @@
   color: var(--accent-primary);
   text-align: center;
   margin-bottom: 3rem;
-  font-family: 'ButlerLight', sans-serif;
+  font-family: "ButlerLight", sans-serif;
 }
 
 .eventCard .eventText {
@@ -845,21 +853,21 @@
 }
 
 .heading {
-  font-size: 1.25rem; 
-  font-weight: 500; 
+  font-size: 1.25rem;
+  font-weight: 500;
   color: var(--accent-secondary);
-  margin-bottom: -10px; 
+  margin-bottom: -10px;
 }
 
 .date {
-  font-size: 0.875rem; 
-  color: #6B7280; 
-  margin-bottom: 0.15rem; 
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.15rem;
 }
 
 .description {
   color: #374151;
-  line-height: 1.625; 
+  line-height: 1.625;
 }
 
 .eventsContainer {
@@ -872,14 +880,15 @@
 
 .eventsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   opacity: 0;
   animation: fadeInUp 0.5s ease forwards;
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
@@ -1139,11 +1148,11 @@
 }
 
 .themeToggle {
-  position: absolute; 
-  top: 1.1rem; 
-  right: .8rem; 
-  transition: all 0.3s ease-in-out; 
-  z-index: 50;  
+  position: absolute;
+  top: 1.1rem;
+  right: 0.8rem;
+  transition: all 0.3s ease-in-out;
+  z-index: 50;
   width: 64px;
   height: 32px;
   padding: 4px;
@@ -1178,14 +1187,14 @@
 .toggleThumbLight {
   transform: translateX(0);
   background-color: var(--accent-primary);
-  bottom: .13rem;
+  bottom: 0.13rem;
 }
 
 .toggleThumbDark {
   transform: translateX(32px);
   background-color: var(--accent-secondary);
-  bottom: .13rem;
-  right: .23rem;
+  bottom: 0.13rem;
+  right: 0.23rem;
 }
 
 .themeIcon {
@@ -1207,13 +1216,13 @@
 .bgSunIcon {
   opacity: 0;
   color: var(--accent-primary);
-  left: 8px; 
+  left: 8px;
 }
 
 .bgMoonIcon {
   opacity: 0;
   color: var(--accent-secondary);
-  right: 8px; 
+  right: 8px;
 }
 
 .themeToggleLight .bgSunIcon,
@@ -1225,16 +1234,21 @@
 
 .backgroundIcons {
   position: absolute;
-  inset: 0; 
+  inset: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   padding: 0 8px;
   pointer-events: none;
 }
 
-.page, .projectCard, .headerSection h1, .bio, 
-.primaryBtn, .secondaryBtn, .tags span {
+.page,
+.projectCard,
+.headerSection h1,
+.bio,
+.primaryBtn,
+.secondaryBtn,
+.tags span {
   transition: all 0.3s ease-in-out;
 }
 
@@ -1263,7 +1277,7 @@
 }
 
 .footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1278,7 +1292,7 @@
 }
 
 .footer::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1294,7 +1308,7 @@
 }
 
 .footer h2 {
-  font-family: 'ButlerStencilUltraLight', serif;
+  font-family: "ButlerStencilUltraLight", serif;
   font-size: 2.5rem;
   font-weight: 300;
   margin-bottom: 2rem;
@@ -1304,7 +1318,7 @@
 }
 
 .footer h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -1387,8 +1401,8 @@
 .mobileNav {
   display: flex;
   position: absolute;
-  top: .6rem; 
-  left: .3rem; 
+  top: 0.6rem;
+  left: 0.3rem;
   align-items: center;
   justify-content: space-between;
   width: auto;
@@ -1400,11 +1414,11 @@
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 3.5rem; 
+  top: 3.5rem;
   left: 0;
   right: 0;
   background-color: var(--background);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 48;
   gap: 1rem;
@@ -1418,7 +1432,7 @@
 }
 
 .dropdownContent a {
-  font-size: 1.125rem; 
+  font-size: 1.125rem;
   font-weight: 500;
   color: var(--text);
   text-decoration: none;
@@ -1451,7 +1465,7 @@
 
 .spotifySection::before,
 .spotifySection::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -1501,8 +1515,8 @@
 }
 
 .spotifyHeader h3 {
-  font-family: 'ButlerStencilUltraLight', serif;
-  font-size: 1.25rem; 
+  font-family: "ButlerStencilUltraLight", serif;
+  font-size: 1.25rem;
   font-weight: 500;
   color: var(--accent-secondary);
   margin: 0;
@@ -1510,7 +1524,7 @@
 }
 
 .spotifyHeader h3::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;

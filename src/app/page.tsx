@@ -7,7 +7,7 @@ import { WorkTimeline } from "@/components/work";
 import { EventsGallery } from "@/components/events";
 import ThemeToggle from "@/components/themetoggle";
 import VideoPlayer from "@/components/videoplayer";
-import SpotifySection from '@/components/spotifysection';
+import SpotifySection from "@/components/spotifysection";
 
 interface Project {
   title: string;
@@ -144,11 +144,11 @@ export default function Home() {
         <div className={styles.mobileMenu}>
           {!navbarOpen ? (
             <button onClick={() => setNavbarOpen(true)}>
-              <Menu strokeWidth="1" size={30}/>
+              <Menu strokeWidth="1" size={30} />
             </button>
           ) : (
             <button onClick={() => setNavbarOpen(false)}>
-              <X strokeWidth="1" size={30}/>
+              <X strokeWidth="1" size={30} />
             </button>
           )}
         </div>
@@ -238,15 +238,13 @@ export default function Home() {
       <section id="about" className={styles.aboutSection}>
         <div className={styles.aboutText}>
           <h2>ABOUT ME</h2>
-          <p>
-            {/* ADD APOSTROPHES HERE SOMEHOW */}
-            Hi! Welcome to this little space about me :)
-          </p>
+          <p>Hi! Welcome to this little space about me :)</p>
           <p>
             I&apos;m Haylie, an aspiring software developer with a passion for
-            creating elegant solutions to complex problems. When I&apos;m not coding,
-            you can find me exploring new technologies, admiring nature&apos;s beauty,
-            or enjoying a vanilla latte while reading the latest fantasy novel.
+            creating elegant solutions to complex problems. When I&apos;m not
+            coding, you can find me exploring new technologies, admiring
+            nature&apos;s beauty, or enjoying a vanilla latte while reading the
+            latest fantasy novel.
           </p>
           <p>
             My journey in software development started with a curiosity about
