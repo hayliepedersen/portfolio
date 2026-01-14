@@ -23,7 +23,6 @@ interface Project {
 
 export default function Home() {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  const [showResumeModal, setShowResumeModal] = useState(false);
 
   useEffect(() => {
     const elements = document.querySelectorAll(`.${styles.slidingBorder}`);
@@ -194,7 +193,9 @@ export default function Home() {
             </button>
             <button
               className={styles.secondaryBtn}
-              onClick={() => setShowResumeModal(true)}
+              onClick={() =>
+                window.open("/media/Haylie_Pedersen_Resume.pdf", "_blank")
+              }
             >
               View Resume
             </button>
@@ -211,29 +212,6 @@ export default function Home() {
           unoptimized
         />
       </div>
-
-      {showResumeModal && (
-        <div className={styles.modal} onClick={() => setShowResumeModal(false)}>
-          <div className={styles.modalContent}>
-            <Image
-              src="/media/resume.png"
-              alt="Resume"
-              className={styles.modalImage}
-              fill
-              unoptimized
-            />
-            <button
-              className={styles.modalClose}
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowResumeModal(false);
-              }}
-            >
-              <X size={24} />
-            </button>
-          </div>
-        </div>
-      )}
 
       <section id="about" className={styles.aboutSection}>
         <div className={styles.aboutText}>
