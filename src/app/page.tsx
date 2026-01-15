@@ -194,7 +194,7 @@ export default function Home() {
             <button
               className={styles.secondaryBtn}
               onClick={() =>
-                window.open("/media/Haylie_Pedersen_Resume.pdf", "_blank")
+                window.open("/media/Pedersen_Resume.pdf", "_blank")
               }
             >
               View Resume
