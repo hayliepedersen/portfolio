@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import styles from "@/app/page.module.css";
@@ -19,6 +19,22 @@ interface Event {
 const EventsGallery = () => {
     const [selectedImage, setSelectedImage] = useState<Event | null>(null);
     const [currentImageIndexes, setCurrentImageIndexes] = useState<{ [key: number]: number }>({});
+    const gridRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+      const el = gridRef.current;
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add(styles.inView);
+          });
+        },
+        { threshold: 0.15 }
+      );
+      observer.observe(el);
+      return () => observer.disconnect();
+    }, []);
   
     const events: Event[] = [
       { 
@@ -93,10 +109,15 @@ const EventsGallery = () => {
     return (
       <section className={styles.eventsSection}>
         <div className={styles.eventsContainer}>
-          <h2 className={styles.sectionTitle}>RECENT EVENTS</h2>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionNumber}>04</span>
+            <h2 className={styles.sectionTitle}>
+              <em>events</em>
+            </h2>
+          </div>
           <p className={styles.eventsSubtitle}>...in my life ♡</p>
-  
-          <div className={styles.eventsGrid}>
+
+          <div ref={gridRef} className={`${styles.eventsGrid} ${styles.revealStagger}`}>
             {events.map((event) => {
               const currentIndex = currentImageIndexes[event.id] || 0;
               return (

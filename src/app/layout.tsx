@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-serif",
+  weight: ["400"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Haylie ♡",
-  description: "Haylie Pedersen's personal website",
+  title: "Haylie Pedersen",
+  description: "Software developer · Haylie Pedersen's personal site",
 };
 
 export default function RootLayout({
@@ -23,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${instrumentSerif.variable}`}>
         {children}
       </body>
     </html>
