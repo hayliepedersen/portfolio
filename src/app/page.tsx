@@ -42,7 +42,7 @@ function useReveal<T extends HTMLElement = HTMLDivElement>() {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -66,7 +66,6 @@ export default function Home() {
   const [sparkleVisible, setSparkleVisible] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
   const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -299,9 +298,7 @@ export default function Home() {
         <div className={styles.heroPhotoCol}>
           <div
             className={styles.heroPortrait}
-            onClick={() =>
-              setHeroSlide((s) => (s + 1) % HERO_PHOTOS.length)
-            }
+            onClick={() => setHeroSlide((s) => (s + 1) % HERO_PHOTOS.length)}
             role="button"
             tabIndex={0}
             aria-label="Next photo"
@@ -388,8 +385,8 @@ export default function Home() {
           </h1>
           <p className={styles.heroTitle}>Software Developer</p>
           <p className={styles.heroTagline}>
-            Aspiring mind. Enthusiast of imaginative worlds, dark chocolate,
-            and espresso.
+            Aspiring mind. Enthusiast of imaginative worlds, dark chocolate, and
+            espresso.
           </p>
           <div className={styles.heroLinks}>
             <a
@@ -431,21 +428,18 @@ export default function Home() {
           </h2>
         </div>
         <div className={styles.aboutText}>
+          <p>Hi! Welcome to this little space about me :)</p>
           <p>
-            Hi — welcome to this little corner of the internet. I&apos;m Haylie,
-            a developer drawn to elegant solutions for complex problems.
+            I&apos;m Haylie, an aspiring software developer with a passion for
+            creating elegant solutions to complex problems. When I&apos;m not
+            coding, you can find me exploring new technologies, admiring
+            nature&apos;s beauty, or enjoying a vanilla latte while reading the
+            latest fantasy novel.
           </p>
           <p>
-            My journey into software started with a quiet curiosity about how
-            things work, and that curiosity has grown with every project I
-            pick up. Lately I&apos;ve been thinking a lot about{" "}
-            <strong>interfaces that feel alive</strong> without getting in the
-            way.
-          </p>
-          <p>
-            Off-screen, you&apos;ll usually find me exploring new tech,
-            admiring nature, or reading a fantasy novel with a vanilla latte
-            close by.
+            My journey in software development started with a curiosity about
+            how things work, and that curiosity has only grown stronger with
+            each project I undertake.
           </p>
         </div>
       </section>
@@ -476,10 +470,7 @@ export default function Home() {
                 {project.videoId ? (
                   <VideoPlayer videoId={project.videoId} />
                 ) : project.video ? (
-                  <video
-                    controls
-                    poster={project.poster}
-                  >
+                  <video controls poster={project.poster}>
                     <source src={project.video} type="video/mp4" />
                   </video>
                 ) : (
@@ -542,7 +533,7 @@ export default function Home() {
           </h2>
           <p className={styles.footerIntro}>
             I&apos;m always open to conversations about new projects,
-            collaborations, or just trading book recommendations.
+            collaborations, or just trading cafe recommendations.
           </p>
           <div className={styles.contactInfo}>
             <a
